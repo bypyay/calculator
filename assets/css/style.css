@@ -1,6 +1,7 @@
 /* ==========================================================================
    Daily1Step Calculator Suite — Master Stylesheet
    Modern, Clean, High-Performance Calculator Platform
+   Full-Width Balanced Grid Design for Ultra-Wide & Standard Screens
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
@@ -59,7 +60,7 @@ body {
 }
 
 /* ==========================================================================
-   Header & Navigation
+   Header & Navigation — Full Fluid Width
    ========================================================================== */
 .site-header {
   background: rgba(255, 255, 255, 0.96);
@@ -68,12 +69,13 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
 }
 
 .header-inner {
-  max-width: 1200px;
+  max-width: 1680px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 36px;
   height: 64px;
   display: flex;
   align-items: center;
@@ -89,20 +91,20 @@ body {
 }
 
 .brand-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-md);
   background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 10px var(--primary-glow);
 }
 
 .brand-title {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
@@ -136,12 +138,13 @@ body {
 .hero-section {
   background: linear-gradient(180deg, #ffffff 0%, var(--bg-page) 100%);
   border-bottom: 1px solid var(--border);
-  padding: 40px 20px 32px;
+  padding: 44px 36px 36px;
   text-align: center;
+  width: 100%;
 }
 
 .hero-title {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: -0.8px;
   margin-bottom: 10px;
@@ -154,40 +157,40 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
-  max-width: 680px;
-  margin: 0 auto 24px;
+  max-width: 800px;
+  margin: 0 auto 26px;
 }
 
 .tool-search-box {
   position: relative;
-  max-width: 560px;
+  max-width: 680px;
   margin: 0 auto;
 }
 
 .tool-search-box .search-icon {
   position: absolute;
-  left: 18px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-muted);
-  font-size: 1rem;
+  font-size: 1.1rem;
   pointer-events: none;
   z-index: 2;
 }
 
 .tool-search-box input[type="text"] {
   width: 100%;
-  height: 48px;
-  padding: 0 18px 0 52px !important;
+  height: 52px;
+  padding: 0 20px 0 56px !important;
   border-radius: var(--radius-xl);
   border: 1.5px solid var(--border);
   background: #ffffff;
   color: var(--text-main);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-family: inherit;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
   transition: all 0.2s ease;
 }
 .tool-search-box input[type="text"]:focus {
@@ -200,24 +203,24 @@ body {
 .category-filter-nav {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
-  max-width: 900px;
-  margin: 24px auto 0;
+  max-width: 1080px;
+  margin: 26px auto 0;
 }
 
 .cat-tab-btn {
-  padding: 8px 18px;
-  border-radius: 20px;
+  padding: 9px 20px;
+  border-radius: 24px;
   border: 1.5px solid var(--border);
   background: #ffffff;
   color: var(--text-muted);
-  font-weight: 600;
-  font-size: 0.88rem;
+  font-weight: 700;
+  font-size: 0.9rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   transition: all 0.15s ease;
   font-family: inherit;
 }
@@ -229,35 +232,36 @@ body {
   background: var(--primary);
   color: #ffffff;
   border-color: var(--primary);
-  box-shadow: 0 2px 8px var(--primary-glow);
+  box-shadow: 0 2px 10px var(--primary-glow);
 }
 
 /* ==========================================================================
-   Tool Cards Grid (Homepage)
+   Tool Cards Grid (Homepage) — Balanced Full-Width 4 to 6 Column Grid
    ========================================================================== */
 .tools-container {
-  max-width: 1200px;
+  max-width: 1680px;
   margin: 36px auto;
-  padding: 0 20px;
+  padding: 0 36px;
   flex: 1;
+  width: 100%;
 }
 
 .category-group-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 32px 0 16px;
+  margin: 36px 0 18px;
 }
 .category-group-header:first-child {
   margin-top: 0;
 }
 
 .cat-group-title {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 800;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: var(--text-main);
 }
 .cat-group-title i {
@@ -266,15 +270,15 @@ body {
 
 .tool-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
 }
 
 .tool-card {
   background: var(--bg-card);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 20px;
+  padding: 22px;
   text-decoration: none;
   color: var(--text-main);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -315,12 +319,12 @@ body {
 }
 
 /* ==========================================================================
-   Single Calculator Tool Layout
+   Single Calculator Tool Layout — Wide Balanced Workspace
    ========================================================================== */
 .calc-workspace-wrap {
-  max-width: 1100px;
+  max-width: 1480px;
   margin: 32px auto;
-  padding: 0 20px;
+  padding: 0 36px;
   flex: 1;
   width: 100%;
 }
@@ -330,7 +334,7 @@ body {
 }
 
 .calc-breadcrumb {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
   display: flex;
   align-items: center;
@@ -346,28 +350,33 @@ body {
 }
 
 .calc-main-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: -0.5px;
   margin-bottom: 6px;
 }
 
 .calc-main-desc {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-muted);
+  max-width: 900px;
 }
 
 /* 2-Column Split: Inputs Form (Left) & Results Display (Right) */
 .calc-grid-layout {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 28px;
   margin-bottom: 36px;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 960px) {
   .calc-grid-layout {
     grid-template-columns: 1fr;
+  }
+  .header-inner, .tools-container, .calc-workspace-wrap, .hero-section {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -380,7 +389,7 @@ body {
 }
 
 .calc-card-title {
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-weight: 800;
   margin-bottom: 20px;
   padding-bottom: 12px;
@@ -577,39 +586,7 @@ body {
   margin-top: 14px;
 }
 
-/* Data Table for Amortization / Breakdowns */
-.calc-table-wrap {
-  overflow-x: auto;
-  margin-top: 16px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-}
-
-.calc-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.85rem;
-  text-align: left;
-}
-.calc-table th {
-  background: var(--bg-subtle);
-  padding: 10px 14px;
-  font-weight: 700;
-  color: var(--text-main);
-  border-bottom: 1px solid var(--border);
-}
-.calc-table td {
-  padding: 8px 14px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-muted);
-}
-.calc-table tr:hover td {
-  background: #f8fafc;
-}
-
-/* ==========================================================================
-   Educational Guide, Formula & FAQ Sections
-   ========================================================================== */
+/* Educational Guide, Formula & FAQ Sections */
 .guide-section {
   background: var(--bg-card);
   border: 1.5px solid var(--border);
@@ -674,12 +651,13 @@ body {
 .site-footer {
   background: #ffffff;
   border-top: 1px solid var(--border);
-  padding: 40px 20px 24px;
+  padding: 40px 36px 24px;
   margin-top: auto;
+  width: 100%;
 }
 
 .footer-inner {
-  max-width: 1200px;
+  max-width: 1680px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
