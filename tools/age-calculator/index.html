@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Age Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Calculate your exact age in years, months, days, hours, and minutes with upcoming birthday countdown.">
+<meta name="description" content="Free online age calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/age-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=1">
+<link rel="stylesheet" href="../../assets/css/style.css?v=2">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Age Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/age-calculator/",
-  "description": "Calculate your exact age in years, months, days, hours, and minutes with upcoming birthday countdown.",
+  "description": "Free online age calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -34,7 +34,7 @@
       <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
     </a>
     <nav class="nav-links">
-      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All Calculators</a>
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All 204+ Calculators</a>
     </nav>
   </div>
 </header>
@@ -44,32 +44,32 @@
     <div class="calc-breadcrumb">
       <a href="../../index.html">Home</a>
       <span>/</span>
-      <span>Everyday Calculators</span>
+      <span>Other Calculators</span>
       <span>/</span>
       <span>Age Calculator</span>
     </div>
     <h1 class="calc-main-title">Age Calculator</h1>
-    <p class="calc-main-desc">Calculate your exact age in years, months, days, hours, and minutes with upcoming birthday countdown.</p>
+    <p class="calc-main-desc">Free online age calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-cake-candles" style="color:var(--primary); margin-right:8px;"></i> Parameters</span>
+        <span><i class="fa-solid fa-cake-candles" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
-        <div class="form-group">
-          <label class="form-label">Date of Birth</label>
-          <input type="date" id="dobInput" class="calc-input" value="1998-05-15">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Age as of Date</label>
-          <input type="date" id="asOfDate" class="calc-input">
-        </div>
-        
+            <div class="form-group">
+              <label class="form-label">Start Date / Date of Birth</label>
+              <input type="date" id="inpStartDate" class="calc-input" value="1996-08-15">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Target / End Date</label>
+              <input type="date" id="inpEndDate" class="calc-input">
+            </div>
+            
       <button type="button" class="btn-calc-primary" onclick="calculate()">
-        <i class="fa-solid fa-calculator"></i> Calculate
+        <i class="fa-solid fa-calculator"></i> Recalculate
       </button>
     </div>
 
@@ -79,32 +79,30 @@
         <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
       </div>
       
-        <div class="result-hero-box">
-          <div class="result-hero-label">Your Exact Age</div>
-          <div class="result-hero-val" id="resAgeYears">28 Years</div>
-          <div style="font-weight:600; color:#0f766e; margin-top:4px;" id="resAgeFull">28 years 3 months 3 days</div>
-        </div>
-        <div class="result-breakdown-list">
-          <div class="result-row"><span class="label">Total Months</span><span class="val" id="resMonths">339 Months</span></div>
-          <div class="result-row"><span class="label">Total Weeks</span><span class="val" id="resWeeks">1,475 Weeks</span></div>
-          <div class="result-row"><span class="label">Total Days</span><span class="val" id="resDays">10,323 Days</span></div>
-          <div class="result-row"><span class="label">Total Hours</span><span class="val" id="resHours">247,752 Hours</span></div>
-          <div class="result-row"><span class="label">Next Birthday</span><span class="val" id="resNextBday">In 265 Days</span></div>
-        </div>
-        
+            <div class="result-hero-box">
+              <div class="result-hero-label">Total Time Duration</div>
+              <div class="result-hero-val" id="resDateDiffYears">30 Years</div>
+              <div style="font-weight:600; color:#0f766e; margin-top:4px;" id="resDateFull">30 years 0 months 3 days</div>
+            </div>
+            <div class="result-breakdown-list">
+              <div class="result-row"><span class="label">Total Days</span><span class="val" id="resDateDays">10,961 Days</span></div>
+              <div class="result-row"><span class="label">Total Weeks</span><span class="val" id="resDateWeeks">1,565 Weeks</span></div>
+              <div class="result-row"><span class="label">Total Hours</span><span class="val" id="resDateHours">263,064 Hours</span></div>
+            </div>
+            
     </div>
   </div>
 
   <!-- Educational Guide & FAQs -->
   <section class="guide-section">
-    <h2>How Age Calculator Works</h2>
+    <h2>How the Age Calculator Works</h2>
     <p>
-      The <strong>Age Calculator</strong> by Daily1Step provides precise, instant financial, mathematical, and health calculations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
+      The <strong>Age Calculator</strong> by Daily1Step provides precise, instant computations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
     </p>
 
-    <h3>Formula &amp; Method</h3>
+    <h3>Formula &amp; Mathematical Method</h3>
     <div class="formula-box">
-      Standardized Formula: Formula variables are evaluated dynamically in client-side high-precision JavaScript.
+      Formula: Calculations are evaluated dynamically in high-precision JavaScript with instant updates.
     </div>
 
     <h3>Frequently Asked Questions</h3>
@@ -113,12 +111,12 @@
       <div class="faq-a">Yes! All calculations, interactive charts, and reports are 100% free with no registration, no subscription, and no hidden fees.</div>
     </div>
     <div class="faq-card">
-      <div class="faq-q">Is my financial and personal data secure?</div>
-      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser. Your data is never uploaded, saved, or shared with third parties.</div>
+      <div class="faq-q">Is my personal or financial data private?</div>
+      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser memory. Your data is never uploaded, saved, or shared with third parties.</div>
     </div>
     <div class="faq-card">
-      <div class="faq-q">Can I export or print the calculation results?</div>
-      <div class="faq-a">Yes, you can easily save results or print the full summary directly from your browser.</div>
+      <div class="faq-q">Can I use this calculator on mobile devices?</div>
+      <div class="faq-a">Yes, Daily1Step Calculators are fully responsive and optimized for smartphones, tablets, laptops, and desktop screens.</div>
     </div>
   </section>
 </main>
@@ -142,54 +140,46 @@
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
 
-        document.getElementById('asOfDate').valueAsDate = new Date();
-        function calculate() {
-          var dobVal = document.getElementById('dobInput').value;
-          var asOfVal = document.getElementById('asOfDate').value;
-          if (!dobVal || !asOfVal) return;
+            document.getElementById('inpEndDate').valueAsDate = new Date();
+            function calculate() {
+              var sVal = document.getElementById('inpStartDate').value;
+              var eVal = document.getElementById('inpEndDate').value;
+              if (!sVal || !eVal) return;
 
-          var dob = new Date(dobVal);
-          var asOf = new Date(asOfVal);
-          if (asOf < dob) {
-            document.getElementById('resAgeYears').textContent = 'Invalid Date';
-            return;
-          }
+              var s = new Date(sVal);
+              var e = new Date(eVal);
+              var diffMs = e - s;
+              if (diffMs < 0) {
+                document.getElementById('resDateDiffYears').textContent = 'Invalid Date Range';
+                return;
+              }
 
-          var years = asOf.getFullYear() - dob.getFullYear();
-          var months = asOf.getMonth() - dob.getMonth();
-          var days = asOf.getDate() - dob.getDate();
+              var years = e.getFullYear() - s.getFullYear();
+              var months = e.getMonth() - s.getMonth();
+              var days = e.getDate() - s.getDate();
+              if (days < 0) {
+                months--;
+                var prevM = new Date(e.getFullYear(), e.getMonth(), 0);
+                days += prevM.getDate();
+              }
+              if (months < 0) {
+                years--;
+                months += 12;
+              }
 
-          if (days < 0) {
-            months--;
-            var prevMonth = new Date(asOf.getFullYear(), asOf.getMonth(), 0);
-            days += prevMonth.getDate();
-          }
-          if (months < 0) {
-            years--;
-            months += 12;
-          }
+              var totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+              var totalWeeks = Math.floor(totalDays / 7);
+              var totalHours = totalDays * 24;
 
-          var diffMs = asOf - dob;
-          var totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-          var totalWeeks = Math.floor(totalDays / 7);
-          var totalMonths = years * 12 + months;
-          var totalHours = totalDays * 24;
-
-          document.getElementById('resAgeYears').textContent = years + ' Years';
-          document.getElementById('resAgeFull').textContent = years + ' years, ' + months + ' months, ' + days + ' days';
-          document.getElementById('resMonths').textContent = CalcCore.formatNumber(totalMonths, 0) + ' Months';
-          document.getElementById('resWeeks').textContent = CalcCore.formatNumber(totalWeeks, 0) + ' Weeks';
-          document.getElementById('resDays').textContent = CalcCore.formatNumber(totalDays, 0) + ' Days';
-          document.getElementById('resHours').textContent = CalcCore.formatNumber(totalHours, 0) + ' Hours';
-
-          var nextBday = new Date(asOf.getFullYear(), dob.getMonth(), dob.getDate());
-          if (nextBday < asOf) nextBday.setFullYear(asOf.getFullYear() + 1);
-          var daysToBday = Math.ceil((nextBday - asOf) / (1000 * 60 * 60 * 24));
-          document.getElementById('resNextBday').textContent = 'In ' + daysToBday + ' Days';
-        }
-        document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-        calculate();
-        
+              document.getElementById('resDateDiffYears').textContent = years + ' Years';
+              document.getElementById('resDateFull').textContent = years + ' years, ' + months + ' months, ' + days + ' days';
+              document.getElementById('resDateDays').textContent = totalDays.toLocaleString() + ' Days';
+              document.getElementById('resDateWeeks').textContent = totalWeeks.toLocaleString() + ' Weeks';
+              document.getElementById('resDateHours').textContent = totalHours.toLocaleString() + ' Hours';
+            }
+            document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
+            calculate();
+            
 </script>
 </body>
 </html>

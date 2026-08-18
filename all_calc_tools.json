@@ -1,0 +1,1226 @@
+[
+  {
+    "id": "mortgage-calculator",
+    "title": "Mortgage Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "loan-calculator",
+    "title": "Loan Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "auto-loan-calculator",
+    "title": "Auto Loan Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "interest-calculator",
+    "title": "Interest Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "payment-calculator",
+    "title": "Payment Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "retirement-calculator",
+    "title": "Retirement Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "amortization-calculator",
+    "title": "Amortization Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "investment-calculator",
+    "title": "Investment Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "currency-calculator",
+    "title": "Currency Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "inflation-calculator",
+    "title": "Inflation Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "finance-calculator",
+    "title": "Finance Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "mortgage-payoff-calculator",
+    "title": "Mortgage Payoff Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "tax-calculator",
+    "title": "Income Tax Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "compound-interest-calculator",
+    "title": "Compound Interest Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "salary-calculator",
+    "title": "Salary Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "401k-calculator",
+    "title": "401K Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "interest-rate-calculator",
+    "title": "Interest Rate Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "sales-tax-calculator",
+    "title": "Sales Tax Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "house-affordability-calculator",
+    "title": "House Affordability Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "savings-calculator",
+    "title": "Savings Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "rent-calculator",
+    "title": "Rent Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "marriage-calculator",
+    "title": "Marriage Tax Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "estate-tax-calculator",
+    "title": "Estate Tax Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "pension-calculator",
+    "title": "Pension Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "social-security-calculator",
+    "title": "Social Security Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "annuity-calculator",
+    "title": "Annuity Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "annuity-payout-calculator",
+    "title": "Annuity Payout Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "credit-card-calculator",
+    "title": "Credit Card Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "credit-card-payoff-calculator",
+    "title": "Credit Cards Payoff Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "debt-payoff-calculator",
+    "title": "Debt Payoff Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "debt-consolidation-calculator",
+    "title": "Debt Consolidation Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "repayment-calculator",
+    "title": "Repayment Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "student-loan-calculator",
+    "title": "Student Loan Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "college-cost-calculator",
+    "title": "College Cost Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "simple-interest-calculator",
+    "title": "Simple Interest Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "cd-calculator",
+    "title": "CD Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "bond-calculator",
+    "title": "Bond Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "mutual-fund-calculator",
+    "title": "Mutual Fund Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "roth-ira-calculator",
+    "title": "Roth IRA Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "ira-calculator",
+    "title": "IRA Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "rmd-calculator",
+    "title": "RMD Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "vat-calculator",
+    "title": "VAT Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "cash-back-or-low-interest-calculator",
+    "title": "Cash Back or Low Interest Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "auto-lease-calculator",
+    "title": "Auto Lease Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "depreciation-calculator",
+    "title": "Depreciation Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "average-return-calculator",
+    "title": "Average Return Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "margin-calculator",
+    "title": "Margin Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "discount-calculator",
+    "title": "Discount Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "business-loan-calculator",
+    "title": "Business Loan Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "debt-ratio-calculator",
+    "title": "Debt-to-Income Ratio Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "real-estate-calculator",
+    "title": "Real Estate Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "take-home-pay-calculator",
+    "title": "Take-Home-Paycheck Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "personal-loan-calculator",
+    "title": "Personal Loan Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "boat-loan-calculator",
+    "title": "Boat Loan Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "lease-calculator",
+    "title": "Lease Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "refinance-calculator",
+    "title": "Refinance Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "budget-calculator",
+    "title": "Budget Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "rental-property-calculator",
+    "title": "Rental Property Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "irr-calculator",
+    "title": "IRR Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "roi-calculator",
+    "title": "ROI Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "apr-calculator",
+    "title": "APR Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "fha-loan-calculator",
+    "title": "FHA Loan Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "va-mortgage-calculator",
+    "title": "VA Mortgage Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "home-equity-loan-calculator",
+    "title": "Home Equity Loan Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "heloc-calculator",
+    "title": "HELOC Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "down-payment-calculator",
+    "title": "Down Payment Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "rent-vs-buy-calculator",
+    "title": "Rent vs. Buy Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "payback-period-calculator",
+    "title": "Payback Period Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "present-value-calculator",
+    "title": "Present Value Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "future-value-calculator",
+    "title": "Future Value Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "commission-calculator",
+    "title": "Commission Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "mortgage-calculator-uk",
+    "title": "Mortgage Calculator UK",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "canadian-mortgage-calculator",
+    "title": "Canadian Mortgage Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "mortgage-amortization-calculator",
+    "title": "Mortgage Amortization Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "percent-off-calculator",
+    "title": "Percent Off Calculator",
+    "category": "financial",
+    "category_title": "Financial Calculators"
+  },
+  {
+    "id": "bmi-calculator",
+    "title": "BMI Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "calorie-calculator",
+    "title": "Calorie Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "body-fat-calculator",
+    "title": "Body Fat Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "bmr-calculator",
+    "title": "BMR Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "macro-calculator",
+    "title": "Macro Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "ideal-weight-calculator",
+    "title": "Ideal Weight Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "pregnancy-calculator",
+    "title": "Pregnancy Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "pregnancy-weight-gain-calculator",
+    "title": "Pregnancy Weight Gain Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "pregnancy-conception-calculator",
+    "title": "Pregnancy Conception Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "due-date-calculator",
+    "title": "Due Date Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "pace-calculator",
+    "title": "Pace Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "army-body-fat-calculator",
+    "title": "Army Body Fat Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "carbohydrate-calculator",
+    "title": "Carbohydrate Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "lean-body-mass-calculator",
+    "title": "Lean Body Mass Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "healthy-weight-calculator",
+    "title": "Healthy Weight Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "calories-burned-calculator",
+    "title": "Calories Burned Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "one-rep-max-calculator",
+    "title": "One Rep Max Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "target-heart-rate-calculator",
+    "title": "Target Heart Rate Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "protein-calculator",
+    "title": "Protein Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "fat-intake-calculator",
+    "title": "Fat Intake Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "tdee-calculator",
+    "title": "TDEE Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "ovulation-calculator",
+    "title": "Ovulation Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "conception-calculator",
+    "title": "Conception Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "period-calculator",
+    "title": "Period Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "gfr-calculator",
+    "title": "GFR Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "body-type-calculator",
+    "title": "Body Type Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "body-surface-area-calculator",
+    "title": "Body Surface Area Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "bac-calculator",
+    "title": "BAC Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "anorexic-bmi-calculator",
+    "title": "Anorexic BMI Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "weight-watchers-points-calculator",
+    "title": "Weight Watcher Points Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "overweight-calculator",
+    "title": "Overweight Calculator",
+    "category": "health",
+    "category_title": "Fitness and Health Calculators"
+  },
+  {
+    "id": "scientific-calculator",
+    "title": "Scientific Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "fraction-calculator",
+    "title": "Fraction Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "percent-calculator",
+    "title": "Percentage Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "triangle-calculator",
+    "title": "Triangle Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "volume-calculator",
+    "title": "Volume Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "standard-deviation-calculator",
+    "title": "Standard Deviation Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "random-number-generator",
+    "title": "Random Number Generator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "number-sequence-calculator",
+    "title": "Number Sequence Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "percent-error-calculator",
+    "title": "Percent Error Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "exponent-calculator",
+    "title": "Exponent Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "binary-calculator",
+    "title": "Binary Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "hex-calculator",
+    "title": "Hex Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "half-life-calculator",
+    "title": "Half-Life Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "quadratic-formula-calculator",
+    "title": "Quadratic Formula Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "slope-calculator",
+    "title": "Slope Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "log-calculator",
+    "title": "Log Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "area-calculator",
+    "title": "Area Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "sample-size-calculator",
+    "title": "Sample Size Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "probability-calculator",
+    "title": "Probability Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "statistics-calculator",
+    "title": "Statistics Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "mean-median-mode-range-calculator",
+    "title": "Mean, Median, Mode, Range Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "permutation-and-combination-calculator",
+    "title": "Permutation and Combination Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "z-score-calculator",
+    "title": "Z-score Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "confidence-interval-calculator",
+    "title": "Confidence Interval Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "ratio-calculator",
+    "title": "Ratio Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "distance-calculator",
+    "title": "Distance Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "circle-calculator",
+    "title": "Circle Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "surface-area-calculator",
+    "title": "Surface Area Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "pythagorean-theorem-calculator",
+    "title": "Pythagorean Theorem Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "right-triangle-calculator",
+    "title": "Right Triangle Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "root-calculator",
+    "title": "Root Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "lcm-calculator",
+    "title": "Least Common Multiple Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "gcf-calculator",
+    "title": "Greatest Common Factor Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "factor-calculator",
+    "title": "Factor Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "rounding-calculator",
+    "title": "Rounding Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "matrix-calculator",
+    "title": "Matrix Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "scientific-notation-calculator",
+    "title": "Scientific Notation Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "big-number-calculator",
+    "title": "Big Number Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "prime-factorization-calculator",
+    "title": "Prime Factorization Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "common-factor-calculator",
+    "title": "Common Factor Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "basic-calculator",
+    "title": "Basic Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "long-division-calculator",
+    "title": "Long Division Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "average-calculator",
+    "title": "Average Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "p-value-calculator",
+    "title": "P-value Calculator",
+    "category": "math",
+    "category_title": "Math Calculators"
+  },
+  {
+    "id": "age-calculator",
+    "title": "Age Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "date-calculator",
+    "title": "Date Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "time-calculator",
+    "title": "Time Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "hours-calculator",
+    "title": "Hours Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "gpa-calculator",
+    "title": "GPA Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "grade-calculator",
+    "title": "Grade Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "height-calculator",
+    "title": "Height Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "concrete-calculator",
+    "title": "Concrete Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "ip-subnet-calculator",
+    "title": "IP Subnet Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "bra-size-calculator",
+    "title": "Bra Size Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "password-generator",
+    "title": "Password Generator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "dice-roller",
+    "title": "Dice Roller",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "conversion-calculator",
+    "title": "Conversion Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "fuel-cost-calculator",
+    "title": "Fuel Cost Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "voltage-drop-calculator",
+    "title": "Voltage Drop Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "btu-calculator",
+    "title": "BTU Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "square-footage-calculator",
+    "title": "Square Footage Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "time-card-calculator",
+    "title": "Time Card Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "time-zone-calculator",
+    "title": "Time Zone Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "love-calculator",
+    "title": "Love Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "gdp-calculator",
+    "title": "GDP Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "gas-mileage-calculator",
+    "title": "Gas Mileage Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "horsepower-calculator",
+    "title": "Horsepower Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "engine-horsepower-calculator",
+    "title": "Engine Horsepower Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "stair-calculator",
+    "title": "Stair Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "resistor-calculator",
+    "title": "Resistor Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "ohms-law-calculator",
+    "title": "Ohms Law Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "electricity-calculator",
+    "title": "Electricity Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "shoe-size-conversion",
+    "title": "Shoe Size Conversion",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "tip-calculator",
+    "title": "Tip Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "mileage-calculator",
+    "title": "Mileage Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "density-calculator",
+    "title": "Density Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "mass-calculator",
+    "title": "Mass Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "weight-calculator",
+    "title": "Weight Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "speed-calculator",
+    "title": "Speed Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "molarity-calculator",
+    "title": "Molarity Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "molecular-weight-calculator",
+    "title": "Molecular Weight Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "roman-numeral-converter",
+    "title": "Roman Numeral Converter",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "golf-handicap-calculator",
+    "title": "Golf Handicap Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "sleep-calculator",
+    "title": "Sleep Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "tire-size-calculator",
+    "title": "Tire Size Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "roofing-calculator",
+    "title": "Roofing Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "tile-calculator",
+    "title": "Tile Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "mulch-calculator",
+    "title": "Mulch Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "gravel-calculator",
+    "title": "Gravel Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "wind-chill-calculator",
+    "title": "Wind Chill Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "heat-index-calculator",
+    "title": "Heat Index Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "dew-point-calculator",
+    "title": "Dew Point Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "bandwidth-calculator",
+    "title": "Bandwidth Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "base64-encode-decode",
+    "title": "Base64 Encode / Decode",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "url-encode-decode",
+    "title": "URL Encode / Decode",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "time-duration-calculator",
+    "title": "Time Duration Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "day-counter",
+    "title": "Day Counter",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  },
+  {
+    "id": "day-of-the-week-calculator",
+    "title": "Day of the Week Calculator",
+    "category": "everyday",
+    "category_title": "Other Calculators"
+  }
+]

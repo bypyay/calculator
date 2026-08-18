@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Loan Calculator — Free Online Calculator | Daily1Step</title>
+<meta name="description" content="Free online personal loan calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<link rel="canonical" href="https://bypyay.github.io/calculator/tools/personal-loan-calculator/">
+<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Personal Loan Calculator - Daily1Step",
+  "url": "https://bypyay.github.io/calculator/tools/personal-loan-calculator/",
+  "description": "Free online personal loan calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All modern web browsers",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-calculator"></i></div>
+      <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All 204+ Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main class="calc-workspace-wrap">
+  <div class="calc-header-meta">
+    <div class="calc-breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span>/</span>
+      <span>Financial Calculators</span>
+      <span>/</span>
+      <span>Personal Loan Calculator</span>
+    </div>
+    <h1 class="calc-main-title">Personal Loan Calculator</h1>
+    <p class="calc-main-desc">Free online personal loan calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+  </div>
+
+  <div class="calc-grid-layout">
+    <!-- Left Inputs Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-hand-holding-dollar" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+      </div>
+      
+        <div class="form-group">
+          <label class="form-label">Total Loan / Debt Balance</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix">$</span>
+            <input type="number" id="inpLoanP" class="calc-input has-prefix" value="30000" min="100" step="500">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Payoff Term (Years)</label>
+          <input type="number" id="inpLoanYrs" class="calc-input" value="5" min="0.5" max="30" step="0.5">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Annual Interest Rate (APR)</label>
+          <div class="input-with-affix">
+            <input type="number" id="inpLoanRate" class="calc-input has-suffix" value="7.2" min="0" max="40" step="0.1">
+            <span class="input-affix suffix">%</span>
+          </div>
+        </div>
+        
+      <button type="button" class="btn-calc-primary" onclick="calculate()">
+        <i class="fa-solid fa-calculator"></i> Recalculate
+      </button>
+    </div>
+
+    <!-- Right Results Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
+      </div>
+      
+        <div class="result-hero-box">
+          <div class="result-hero-label">Monthly EMI Payment</div>
+          <div class="result-hero-val" id="resLoanEMI">$596.88</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Total Payments (Principal + Interest)</span><span class="val" id="resLoanTotalPay">$35,812.80</span></div>
+          <div class="result-row"><span class="label">Total Principal Borrowed</span><span class="val" id="resLoanPrincipal">$30,000.00</span></div>
+          <div class="result-row"><span class="label">Total Interest Paid</span><span class="val" id="resLoanTotalInt">$5,812.80</span></div>
+        </div>
+        <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
+        
+    </div>
+  </div>
+
+  <!-- Educational Guide & FAQs -->
+  <section class="guide-section">
+    <h2>How the Personal Loan Calculator Works</h2>
+    <p>
+      The <strong>Personal Loan Calculator</strong> by Daily1Step provides precise, instant computations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
+    </p>
+
+    <h3>Formula &amp; Mathematical Method</h3>
+    <div class="formula-box">
+      Formula: Calculations are evaluated dynamically in high-precision JavaScript with instant updates.
+    </div>
+
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-card">
+      <div class="faq-q">Is this Personal Loan Calculator completely free to use?</div>
+      <div class="faq-a">Yes! All calculations, interactive charts, and reports are 100% free with no registration, no subscription, and no hidden fees.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Is my personal or financial data private?</div>
+      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser memory. Your data is never uploaded, saved, or shared with third parties.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Can I use this calculator on mobile devices?</div>
+      <div class="faq-a">Yes, Daily1Step Calculators are fully responsive and optimized for smartphones, tablets, laptops, and desktop screens.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="../../index.html">All Calculators</a>
+      <a href="../../legal/privacy.html">Privacy Policy</a>
+      <a href="../../legal/terms.html">Terms of Service</a>
+      <a href="../../legal/about.html">About Us</a>
+      <a href="../../legal/contact.html">Contact</a>
+      <a href="../../legal/disclaimer.html">Disclaimer</a>
+    </div>
+    <p class="copyright">&copy; 2026 Daily1Step. Free online calculators for finance, health, math, and daily utilities.</p>
+  </div>
+</footer>
+
+<script src="../../vendor/chart.umd.min.js"></script>
+<script src="../../vendor/jspdf.umd.min.js"></script>
+<script src="../../assets/js/calculator-core.js"></script>
+<script>
+
+        function calculate() {
+          var P = parseFloat(document.getElementById('inpLoanP').value) || 0;
+          var years = parseFloat(document.getElementById('inpLoanYrs').value) || 5;
+          var r = (parseFloat(document.getElementById('inpLoanRate').value) || 7.2) / 100 / 12;
+          var n = years * 12;
+
+          var emi = 0;
+          if (r > 0) {
+            emi = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+          } else {
+            emi = P / n;
+          }
+
+          var totalPay = emi * n;
+          var totalInt = Math.max(0, totalPay - P);
+
+          document.getElementById('resLoanEMI').textContent = CalcCore.formatCurrency(emi);
+          document.getElementById('resLoanTotalPay').textContent = CalcCore.formatCurrency(totalPay);
+          document.getElementById('resLoanPrincipal').textContent = CalcCore.formatCurrency(P);
+          document.getElementById('resLoanTotalInt').textContent = CalcCore.formatCurrency(totalInt);
+
+          CalcCore.renderDoughnutChart('calcChart', ['Principal Loan', 'Total Interest'], [P, totalInt], ['#0d9488', '#f59e0b']);
+        }
+        document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
+</script>
+</body>
+</html>
