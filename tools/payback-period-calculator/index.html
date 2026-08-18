@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Payback Period Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online payback period calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online payback period calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/payback-period-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Payback Period Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/payback-period-calculator/",
-  "description": "Free online payback period calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online payback period calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,35 +49,30 @@
       <span>Payback Period Calculator</span>
     </div>
     <h1 class="calc-main-title">Payback Period Calculator</h1>
-    <p class="calc-main-desc">Free online payback period calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online payback period calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-hand-holding-dollar" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
-            <div class="form-group">
-              <label class="form-label">Primary Amount / Measure</label>
-              <div class="input-with-affix">
-                <span class="input-affix prefix">$</span>
-                <input type="number" id="inpUtilVal" class="calc-input has-prefix" value="120" min="0" step="any">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Rate / Percentage / Factor</label>
-              <div class="input-with-affix">
-                <input type="number" id="inpUtilFactor" class="calc-input has-suffix" value="18" min="0" step="any">
-                <span class="input-affix suffix">%</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Split / Quantity</label>
-              <input type="number" id="inpUtilSplit" class="calc-input" value="3" min="1" step="1">
-            </div>
-            
+        <div class="form-group">
+          <label class="form-label">First Day of Last Menstrual Period (LMP)</label>
+          <input type="date" id="inpLMP" class="calc-input">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Average Menstrual Cycle Length</label>
+          <select id="inpCycleDays" class="calc-select">
+            <option value="28" selected>28 Days (Standard)</option>
+            <option value="26">26 Days</option>
+            <option value="30">30 Days</option>
+            <option value="32">32 Days</option>
+          </select>
+        </div>
+        
       <button type="button" class="btn-calc-primary" onclick="calculate()">
         <i class="fa-solid fa-calculator"></i> Recalculate
       </button>
@@ -89,15 +84,17 @@
         <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
       </div>
       
-            <div class="result-hero-box">
-              <div class="result-hero-label">Calculated Final Amount</div>
-              <div class="result-hero-val" id="resUtilTotal">$141.60</div>
-            </div>
-            <div class="result-breakdown-list">
-              <div class="result-row"><span class="label">Amount per Person / Unit</span><span class="val" id="resUtilPerUnit">$47.20</span></div>
-              <div class="result-row"><span class="label">Additional Value Added</span><span class="val" id="resUtilAdd">$21.60</span></div>
-            </div>
-            
+        <div class="result-hero-box">
+          <div class="result-hero-label">Estimated Due Date</div>
+          <div class="result-hero-val" id="resDueDate">Nov 22, 2026</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Current Gestational Age</span><span class="val" id="resPregWeeks">12 Weeks 4 Days</span></div>
+          <div class="result-row"><span class="label">Trimester Stage</span><span class="val" id="resTrimester">First Trimester</span></div>
+          <div class="result-row"><span class="label">Estimated Conception Date</span><span class="val" id="resConception">Mar 01, 2026</span></div>
+          <div class="result-row"><span class="label">Days Remaining Until Delivery</span><span class="val" id="resDaysLeft">192 Days</span></div>
+        </div>
+        
     </div>
   </div>
 
@@ -148,22 +145,39 @@
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
 
-            function calculate() {
-              var v = parseFloat(document.getElementById('inpUtilVal').value) || 0;
-              var f = (parseFloat(document.getElementById('inpUtilFactor').value) || 0) / 100;
-              var n = Math.max(1, parseInt(document.getElementById('inpUtilSplit').value) || 1);
+        var lmpDate = new Date();
+        lmpDate.setDate(lmpDate.getDate() - 70);
+        document.getElementById('inpLMP').value = lmpDate.toISOString().split('T')[0];
 
-              var added = v * f;
-              var total = v + added;
-              var perUnit = total / n;
+        function calculate() {
+          var val = document.getElementById('inpLMP').value;
+          if (!val) return;
+          var lmp = new Date(val);
+          var cycle = parseInt(document.getElementById('inpCycleDays').value) || 28;
 
-              document.getElementById('resUtilTotal').textContent = CalcCore.formatCurrency(total);
-              document.getElementById('resUtilPerUnit').textContent = CalcCore.formatCurrency(perUnit);
-              document.getElementById('resUtilAdd').textContent = CalcCore.formatCurrency(added);
-            }
-            document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-            calculate();
-            
+          // Naegele's rule: +280 days + (cycle - 28)
+          var dueDate = new Date(lmp.getTime() + (280 + (cycle - 28)) * 24 * 60 * 60 * 1000);
+          var conception = new Date(lmp.getTime() + (14 + (cycle - 28)) * 24 * 60 * 60 * 1000);
+          var now = new Date();
+          var diffMs = now - lmp;
+          var totalDays = Math.floor(diffMs / (24 * 60 * 60 * 1000));
+          var weeks = Math.floor(totalDays / 7);
+          var remDays = totalDays % 7;
+
+          var daysLeft = Math.ceil((dueDate - now) / (24 * 60 * 60 * 1000));
+          var trimester = 'First Trimester (Weeks 1-13)';
+          if (weeks >= 14 && weeks <= 27) trimester = 'Second Trimester (Weeks 14-27)';
+          else if (weeks >= 28) trimester = 'Third Trimester (Weeks 28-40+)';
+
+          document.getElementById('resDueDate').textContent = dueDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          document.getElementById('resPregWeeks').textContent = weeks + ' Weeks, ' + remDays + ' Days';
+          document.getElementById('resTrimester').textContent = trimester;
+          document.getElementById('resConception').textContent = conception.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          document.getElementById('resDaysLeft').textContent = Math.max(0, daysLeft) + ' Days';
+        }
+        document.querySelectorAll('.calc-input, .calc-select').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
 </script>
 </body>
 </html>

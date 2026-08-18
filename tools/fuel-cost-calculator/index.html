@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fuel Cost Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online fuel cost calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online fuel cost calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/fuel-cost-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Fuel Cost Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/fuel-cost-calculator/",
-  "description": "Free online fuel cost calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online fuel cost calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,35 +49,36 @@
       <span>Fuel Cost Calculator</span>
     </div>
     <h1 class="calc-main-title">Fuel Cost Calculator</h1>
-    <p class="calc-main-desc">Free online fuel cost calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online fuel cost calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-gas-pump" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
-            <div class="form-group">
-              <label class="form-label">Primary Amount / Measure</label>
-              <div class="input-with-affix">
-                <span class="input-affix prefix">$</span>
-                <input type="number" id="inpUtilVal" class="calc-input has-prefix" value="120" min="0" step="any">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Rate / Percentage / Factor</label>
-              <div class="input-with-affix">
-                <input type="number" id="inpUtilFactor" class="calc-input has-suffix" value="18" min="0" step="any">
-                <span class="input-affix suffix">%</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Split / Quantity</label>
-              <input type="number" id="inpUtilSplit" class="calc-input" value="3" min="1" step="1">
-            </div>
-            
+        <div class="form-group">
+          <label class="form-label">Trip Distance (Miles or Km)</label>
+          <input type="number" id="fuelDist" class="calc-input" value="350" min="1" step="10">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Vehicle Fuel Efficiency (MPG)</label>
+          <input type="number" id="fuelEff" class="calc-input" value="28" min="1" step="1">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Gas Price Per Gallon</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix">$</span>
+            <input type="number" id="fuelPrice" class="calc-input has-prefix" value="3.65" min="0.1" step="0.05">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Passengers (Split Trip)</label>
+          <input type="number" id="fuelPass" class="calc-input" value="2" min="1" step="1">
+        </div>
+        
       <button type="button" class="btn-calc-primary" onclick="calculate()">
         <i class="fa-solid fa-calculator"></i> Recalculate
       </button>
@@ -89,15 +90,16 @@
         <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
       </div>
       
-            <div class="result-hero-box">
-              <div class="result-hero-label">Calculated Final Amount</div>
-              <div class="result-hero-val" id="resUtilTotal">$141.60</div>
-            </div>
-            <div class="result-breakdown-list">
-              <div class="result-row"><span class="label">Amount per Person / Unit</span><span class="val" id="resUtilPerUnit">$47.20</span></div>
-              <div class="result-row"><span class="label">Additional Value Added</span><span class="val" id="resUtilAdd">$21.60</span></div>
-            </div>
-            
+        <div class="result-hero-box">
+          <div class="result-hero-label">Total Trip Fuel Cost</div>
+          <div class="result-hero-val" id="resFuelCost">$45.63</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Cost Per Passenger</span><span class="val" id="resFuelPerPass">$22.81</span></div>
+          <div class="result-row"><span class="label">Total Fuel Required</span><span class="val" id="resFuelGal">12.50 Gallons</span></div>
+          <div class="result-row"><span class="label">Cost Per Mile</span><span class="val" id="resFuelPerMile">$0.13 / mile</span></div>
+        </div>
+        
     </div>
   </div>
 
@@ -148,22 +150,25 @@
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
 
-            function calculate() {
-              var v = parseFloat(document.getElementById('inpUtilVal').value) || 0;
-              var f = (parseFloat(document.getElementById('inpUtilFactor').value) || 0) / 100;
-              var n = Math.max(1, parseInt(document.getElementById('inpUtilSplit').value) || 1);
+        function calculate() {
+          var dist = parseFloat(document.getElementById('fuelDist').value) || 0;
+          var mpg = parseFloat(document.getElementById('fuelEff').value) || 28;
+          var price = parseFloat(document.getElementById('fuelPrice').value) || 3.65;
+          var pass = Math.max(1, parseInt(document.getElementById('fuelPass').value) || 1);
 
-              var added = v * f;
-              var total = v + added;
-              var perUnit = total / n;
+          var gal = mpg > 0 ? dist / mpg : 0;
+          var totalCost = gal * price;
+          var perPass = totalCost / pass;
+          var perMile = dist > 0 ? totalCost / dist : 0;
 
-              document.getElementById('resUtilTotal').textContent = CalcCore.formatCurrency(total);
-              document.getElementById('resUtilPerUnit').textContent = CalcCore.formatCurrency(perUnit);
-              document.getElementById('resUtilAdd').textContent = CalcCore.formatCurrency(added);
-            }
-            document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-            calculate();
-            
+          document.getElementById('resFuelCost').textContent = CalcCore.formatCurrency(totalCost);
+          document.getElementById('resFuelPerPass').textContent = CalcCore.formatCurrency(perPass);
+          document.getElementById('resFuelGal').textContent = gal.toFixed(2) + ' Gallons';
+          document.getElementById('resFuelPerMile').textContent = CalcCore.formatCurrency(perMile) + ' / mile';
+        }
+        document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
 </script>
 </body>
 </html>

@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Time Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online time calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online time calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/time-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Time Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/time-calculator/",
-  "description": "Free online time calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online time calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,35 +49,25 @@
       <span>Time Calculator</span>
     </div>
     <h1 class="calc-main-title">Time Calculator</h1>
-    <p class="calc-main-desc">Free online time calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online time calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-clock" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
-            <div class="form-group">
-              <label class="form-label">Primary Amount / Measure</label>
-              <div class="input-with-affix">
-                <span class="input-affix prefix">$</span>
-                <input type="number" id="inpUtilVal" class="calc-input has-prefix" value="120" min="0" step="any">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Rate / Percentage / Factor</label>
-              <div class="input-with-affix">
-                <input type="number" id="inpUtilFactor" class="calc-input has-suffix" value="18" min="0" step="any">
-                <span class="input-affix suffix">%</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Split / Quantity</label>
-              <input type="number" id="inpUtilSplit" class="calc-input" value="3" min="1" step="1">
-            </div>
-            
+        <div class="form-group">
+          <label class="form-label">Start Date / Date of Birth</label>
+          <input type="date" id="inpStartDate" class="calc-input" value="1998-05-15">
+        </div>
+        <div class="form-group">
+          <label class="form-label">End / Target Date</label>
+          <input type="date" id="inpEndDate" class="calc-input">
+        </div>
+        
       <button type="button" class="btn-calc-primary" onclick="calculate()">
         <i class="fa-solid fa-calculator"></i> Recalculate
       </button>
@@ -89,15 +79,19 @@
         <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
       </div>
       
-            <div class="result-hero-box">
-              <div class="result-hero-label">Calculated Final Amount</div>
-              <div class="result-hero-val" id="resUtilTotal">$141.60</div>
-            </div>
-            <div class="result-breakdown-list">
-              <div class="result-row"><span class="label">Amount per Person / Unit</span><span class="val" id="resUtilPerUnit">$47.20</span></div>
-              <div class="result-row"><span class="label">Additional Value Added</span><span class="val" id="resUtilAdd">$21.60</span></div>
-            </div>
-            
+        <div class="result-hero-box">
+          <div class="result-hero-label">Exact Duration / Age</div>
+          <div class="result-hero-val" id="resYears">28 Years</div>
+          <div style="font-weight:600; color:#0f766e; margin-top:4px;" id="resFullTime">28 years 3 months 3 days</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Total Months</span><span class="val" id="resMonths">339 Months</span></div>
+          <div class="result-row"><span class="label">Total Weeks</span><span class="val" id="resWeeks">1,475 Weeks</span></div>
+          <div class="result-row"><span class="label">Total Days</span><span class="val" id="resDays">10,323 Days</span></div>
+          <div class="result-row"><span class="label">Total Hours</span><span class="val" id="resHours">247,752 Hours</span></div>
+          <div class="result-row"><span class="label">Next Milestone / Birthday</span><span class="val" id="resNext">In 265 Days</span></div>
+        </div>
+        
     </div>
   </div>
 
@@ -148,22 +142,53 @@
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
 
-            function calculate() {
-              var v = parseFloat(document.getElementById('inpUtilVal').value) || 0;
-              var f = (parseFloat(document.getElementById('inpUtilFactor').value) || 0) / 100;
-              var n = Math.max(1, parseInt(document.getElementById('inpUtilSplit').value) || 1);
+        document.getElementById('inpEndDate').valueAsDate = new Date();
+        function calculate() {
+          var sVal = document.getElementById('inpStartDate').value;
+          var eVal = document.getElementById('inpEndDate').value;
+          if (!sVal || !eVal) return;
 
-              var added = v * f;
-              var total = v + added;
-              var perUnit = total / n;
+          var s = new Date(sVal);
+          var e = new Date(eVal);
+          var diffMs = e - s;
+          if (diffMs < 0) {
+            document.getElementById('resYears').textContent = 'Invalid Range';
+            return;
+          }
 
-              document.getElementById('resUtilTotal').textContent = CalcCore.formatCurrency(total);
-              document.getElementById('resUtilPerUnit').textContent = CalcCore.formatCurrency(perUnit);
-              document.getElementById('resUtilAdd').textContent = CalcCore.formatCurrency(added);
-            }
-            document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-            calculate();
-            
+          var years = e.getFullYear() - s.getFullYear();
+          var months = e.getMonth() - s.getMonth();
+          var days = e.getDate() - s.getDate();
+          if (days < 0) {
+            months--;
+            var prevM = new Date(e.getFullYear(), e.getMonth(), 0);
+            days += prevM.getDate();
+          }
+          if (months < 0) {
+            years--;
+            months += 12;
+          }
+
+          var totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+          var totalWeeks = Math.floor(totalDays / 7);
+          var totalMonths = years * 12 + months;
+          var totalHours = totalDays * 24;
+
+          document.getElementById('resYears').textContent = years + ' Years';
+          document.getElementById('resFullTime').textContent = years + ' years, ' + months + ' months, ' + days + ' days';
+          document.getElementById('resMonths').textContent = totalMonths.toLocaleString() + ' Months';
+          document.getElementById('resWeeks').textContent = totalWeeks.toLocaleString() + ' Weeks';
+          document.getElementById('resDays').textContent = totalDays.toLocaleString() + ' Days';
+          document.getElementById('resHours').textContent = totalHours.toLocaleString() + ' Hours';
+
+          var nextBday = new Date(e.getFullYear(), s.getMonth(), s.getDate());
+          if (nextBday < e) nextBday.setFullYear(e.getFullYear() + 1);
+          var daysToNext = Math.ceil((nextBday - e) / (1000 * 60 * 60 * 24));
+          document.getElementById('resNext').textContent = 'In ' + daysToNext + ' Days';
+        }
+        document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
 </script>
 </body>
 </html>

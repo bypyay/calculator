@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Percentage Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online percentage calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online percentage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/percent-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Percentage Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/percent-calculator/",
-  "description": "Free online percentage calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online percentage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,34 +49,31 @@
       <span>Percentage Calculator</span>
     </div>
     <h1 class="calc-main-title">Percentage Calculator</h1>
-    <p class="calc-main-desc">Free online percentage calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online percentage calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-percent" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
         <div class="form-group">
-          <label class="form-label">Primary Number / Value (A)</label>
-          <input type="number" id="inpMathA" class="calc-input" value="48" step="any">
+          <label class="form-label">What is</label>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <input type="number" id="p1" class="calc-input" value="15" style="flex:1;">
+            <span style="font-weight:700; color:var(--text-muted);">% of</span>
+            <input type="number" id="p2" class="calc-input" value="250" style="flex:1.5;">
+          </div>
         </div>
-        <div class="form-group">
-          <label class="form-label">Secondary Number / Value (B)</label>
-          <input type="number" id="inpMathB" class="calc-input" value="18" step="any">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Operation / Function</label>
-          <select id="inpMathOp" class="calc-select">
-            <option value="pct" selected>Percentage (A as % of B)</option>
-            <option value="diff">Percentage Difference</option>
-            <option value="pow">Power (A^B)</option>
-            <option value="root">Square Root of A</option>
-            <option value="gcd">Greatest Common Divisor (GCD)</option>
-            <option value="lcm">Least Common Multiple (LCM)</option>
-          </select>
+        <div class="form-group" style="margin-top:24px;">
+          <label class="form-label">Percentage Increase / Decrease</label>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <input type="number" id="c1" class="calc-input" value="120" placeholder="From" style="flex:1;">
+            <span style="font-weight:700; color:var(--text-muted);">&rarr;</span>
+            <input type="number" id="c2" class="calc-input" value="180" placeholder="To" style="flex:1;">
+          </div>
         </div>
         
       <button type="button" class="btn-calc-primary" onclick="calculate()">
@@ -91,13 +88,12 @@
       </div>
       
         <div class="result-hero-box">
-          <div class="result-hero-label">Calculated Result</div>
-          <div class="result-hero-val" id="resMathMain">266.67%</div>
+          <div class="result-hero-label">Calculated Result (X% of Y)</div>
+          <div class="result-hero-val" id="resPVal">37.5</div>
         </div>
         <div class="result-breakdown-list">
-          <div class="result-row"><span class="label">Sum (A + B)</span><span class="val" id="resMathSum">66</span></div>
-          <div class="result-row"><span class="label">Product (A &times; B)</span><span class="val" id="resMathProd">864</span></div>
-          <div class="result-row"><span class="label">Ratio (A : B)</span><span class="val" id="resMathRatio">8 : 3</span></div>
+          <div class="result-row"><span class="label">Percentage Change</span><span class="val" id="resChange">+50.00%</span></div>
+          <div class="result-row"><span class="label">Absolute Difference</span><span class="val" id="resDiff">60</span></div>
         </div>
         
     </div>
@@ -150,31 +146,22 @@
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
 
-        function gcd(a, b) { return b ? gcd(b, a % b) : Math.abs(a); }
-        function lcm(a, b) { return (a && b) ? (Math.abs(a * b) / gcd(a, b)) : 0; }
-
         function calculate() {
-          var a = parseFloat(document.getElementById('inpMathA').value) || 0;
-          var b = parseFloat(document.getElementById('inpMathB').value) || 0;
-          var op = document.getElementById('inpMathOp').value;
+          var p1 = parseFloat(document.getElementById('p1').value) || 0;
+          var p2 = parseFloat(document.getElementById('p2').value) || 0;
+          var c1 = parseFloat(document.getElementById('c1').value) || 0;
+          var c2 = parseFloat(document.getElementById('c2').value) || 0;
 
-          var res = 0;
-          if (op === 'pct') res = b !== 0 ? ((a / b) * 100).toFixed(2) + '%' : '0%';
-          else if (op === 'diff') res = b !== 0 ? (((a - b) / b) * 100).toFixed(2) + '%' : '0%';
-          else if (op === 'pow') res = Math.pow(a, b).toFixed(4);
-          else if (op === 'root') res = Math.sqrt(a).toFixed(4);
-          else if (op === 'gcd') res = gcd(Math.round(a), Math.round(b));
-          else if (op === 'lcm') res = lcm(Math.round(a), Math.round(b));
+          var r1 = (p1 / 100) * p2;
+          document.getElementById('resPVal').textContent = CalcCore.formatNumber(r1, 2);
 
-          var g = gcd(Math.round(a), Math.round(b)) || 1;
-          var ratioStr = (Math.round(a)/g) + ' : ' + (Math.round(b)/g);
-
-          document.getElementById('resMathMain').textContent = res;
-          document.getElementById('resMathSum').textContent = (a + b).toLocaleString();
-          document.getElementById('resMathProd').textContent = (a * b).toLocaleString();
-          document.getElementById('resMathRatio').textContent = ratioStr;
+          var diff = c2 - c1;
+          var pctChange = c1 !== 0 ? (diff / c1) * 100 : 0;
+          var sign = pctChange >= 0 ? '+' : '';
+          document.getElementById('resChange').textContent = sign + pctChange.toFixed(2) + '%';
+          document.getElementById('resDiff').textContent = CalcCore.formatNumber(Math.abs(diff), 2);
         }
-        document.querySelectorAll('.calc-input, .calc-select').forEach(function(el) { el.addEventListener('input', calculate); });
+        document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
         calculate();
         
 </script>

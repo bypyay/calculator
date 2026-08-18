@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ovulation Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online ovulation calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online ovulation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/ovulation-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Ovulation Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/ovulation-calculator/",
-  "description": "Free online ovulation calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online ovulation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,42 +49,27 @@
       <span>Ovulation Calculator</span>
     </div>
     <h1 class="calc-main-title">Ovulation Calculator</h1>
-    <p class="calc-main-desc">Free online ovulation calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online ovulation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-heart-pulse" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
         <div class="form-group">
-          <label class="form-label">Biological Gender</label>
-          <select id="inpGender" class="calc-select">
-            <option value="male" selected>Male</option>
-            <option value="female">Female</option>
-          </select>
+          <label class="form-label">First Day of Last Menstrual Period (LMP)</label>
+          <input type="date" id="inpLMP" class="calc-input">
         </div>
         <div class="form-group">
-          <label class="form-label">Age (Years)</label>
-          <input type="number" id="inpAge" class="calc-input" value="28" min="10" max="110">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Height (cm)</label>
-          <input type="number" id="inpHeightCm" class="calc-input" value="175" min="80" max="240">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Weight (kg)</label>
-          <input type="number" id="inpWeightKg" class="calc-input" value="72" min="30" max="250">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Activity Level</label>
-          <select id="inpActivity" class="calc-select">
-            <option value="1.2">Sedentary (Little or no exercise)</option>
-            <option value="1.375" selected>Lightly Active (Exercise 1-3 days/wk)</option>
-            <option value="1.55">Moderately Active (Exercise 3-5 days/wk)</option>
-            <option value="1.725">Very Active (Hard exercise 6-7 days/wk)</option>
+          <label class="form-label">Average Menstrual Cycle Length</label>
+          <select id="inpCycleDays" class="calc-select">
+            <option value="28" selected>28 Days (Standard)</option>
+            <option value="26">26 Days</option>
+            <option value="30">30 Days</option>
+            <option value="32">32 Days</option>
           </select>
         </div>
         
@@ -100,16 +85,15 @@
       </div>
       
         <div class="result-hero-box">
-          <div class="result-hero-label">Daily Maintenance Calories (TDEE)</div>
-          <div class="result-hero-val" id="resTDEE">2,324 kcal</div>
+          <div class="result-hero-label">Estimated Due Date</div>
+          <div class="result-hero-val" id="resDueDate">Nov 22, 2026</div>
         </div>
         <div class="result-breakdown-list">
-          <div class="result-row"><span class="label">Basal Metabolic Rate (BMR)</span><span class="val" id="resBMR">1,690 kcal</span></div>
-          <div class="result-row"><span class="label">Weight Loss (0.5 kg / wk)</span><span class="val" id="resLoss">1,824 kcal</span></div>
-          <div class="result-row"><span class="label">Weight Gain (Muscle Bulking)</span><span class="val" id="resGain">2,624 kcal</span></div>
-          <div class="result-row"><span class="label">BMI Index</span><span class="val" id="resHealthBMI">23.5 (Normal)</span></div>
+          <div class="result-row"><span class="label">Current Gestational Age</span><span class="val" id="resPregWeeks">12 Weeks 4 Days</span></div>
+          <div class="result-row"><span class="label">Trimester Stage</span><span class="val" id="resTrimester">First Trimester</span></div>
+          <div class="result-row"><span class="label">Estimated Conception Date</span><span class="val" id="resConception">Mar 01, 2026</span></div>
+          <div class="result-row"><span class="label">Days Remaining Until Delivery</span><span class="val" id="resDaysLeft">192 Days</span></div>
         </div>
-        <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
         
     </div>
   </div>
@@ -161,37 +145,35 @@
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
 
+        var lmpDate = new Date();
+        lmpDate.setDate(lmpDate.getDate() - 70);
+        document.getElementById('inpLMP').value = lmpDate.toISOString().split('T')[0];
+
         function calculate() {
-          var gender = document.getElementById('inpGender').value;
-          var age = parseFloat(document.getElementById('inpAge').value) || 28;
-          var cm = parseFloat(document.getElementById('inpHeightCm').value) || 175;
-          var kg = parseFloat(document.getElementById('inpWeightKg').value) || 72;
-          var act = parseFloat(document.getElementById('inpActivity').value) || 1.375;
+          var val = document.getElementById('inpLMP').value;
+          if (!val) return;
+          var lmp = new Date(val);
+          var cycle = parseInt(document.getElementById('inpCycleDays').value) || 28;
 
-          // Mifflin-St Jeor Formula
-          var bmr = (10 * kg) + (6.25 * cm) - (5 * age);
-          if (gender === 'male') bmr += 5;
-          else bmr -= 161;
+          // Naegele's rule: +280 days + (cycle - 28)
+          var dueDate = new Date(lmp.getTime() + (280 + (cycle - 28)) * 24 * 60 * 60 * 1000);
+          var conception = new Date(lmp.getTime() + (14 + (cycle - 28)) * 24 * 60 * 60 * 1000);
+          var now = new Date();
+          var diffMs = now - lmp;
+          var totalDays = Math.floor(diffMs / (24 * 60 * 60 * 1000));
+          var weeks = Math.floor(totalDays / 7);
+          var remDays = totalDays % 7;
 
-          var tdee = bmr * act;
-          var loss = tdee - 500;
-          var gain = tdee + 300;
+          var daysLeft = Math.ceil((dueDate - now) / (24 * 60 * 60 * 1000));
+          var trimester = 'First Trimester (Weeks 1-13)';
+          if (weeks >= 14 && weeks <= 27) trimester = 'Second Trimester (Weeks 14-27)';
+          else if (weeks >= 28) trimester = 'Third Trimester (Weeks 28-40+)';
 
-          var heightM = cm / 100;
-          var bmi = kg / (heightM * heightM);
-
-          document.getElementById('resTDEE').textContent = Math.round(tdee).toLocaleString() + ' kcal';
-          document.getElementById('resBMR').textContent = Math.round(bmr).toLocaleString() + ' kcal';
-          document.getElementById('resLoss').textContent = Math.round(loss).toLocaleString() + ' kcal';
-          document.getElementById('resGain').textContent = Math.round(gain).toLocaleString() + ' kcal';
-          document.getElementById('resHealthBMI').textContent = bmi.toFixed(1) + ' (Normal)';
-
-          // Macro Breakdown
-          var proteinG = Math.round((tdee * 0.3) / 4);
-          var carbsG = Math.round((tdee * 0.45) / 4);
-          var fatG = Math.round((tdee * 0.25) / 9);
-
-          CalcCore.renderDoughnutChart('calcChart', ['Protein (30%)', 'Carbohydrates (45%)', 'Healthy Fats (25%)'], [proteinG, carbsG, fatG], ['#0d9488', '#0284c7', '#f59e0b']);
+          document.getElementById('resDueDate').textContent = dueDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          document.getElementById('resPregWeeks').textContent = weeks + ' Weeks, ' + remDays + ' Days';
+          document.getElementById('resTrimester').textContent = trimester;
+          document.getElementById('resConception').textContent = conception.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          document.getElementById('resDaysLeft').textContent = Math.max(0, daysLeft) + ' Days';
         }
         document.querySelectorAll('.calc-input, .calc-select').forEach(function(el) { el.addEventListener('input', calculate); });
         calculate();

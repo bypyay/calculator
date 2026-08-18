@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inflation Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online inflation calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online inflation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/inflation-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Inflation Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/inflation-calculator/",
-  "description": "Free online inflation calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online inflation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,35 +49,42 @@
       <span>Inflation Calculator</span>
     </div>
     <h1 class="calc-main-title">Inflation Calculator</h1>
-    <p class="calc-main-desc">Free online inflation calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online inflation calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-hand-holding-dollar" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
-            <div class="form-group">
-              <label class="form-label">Primary Amount / Measure</label>
-              <div class="input-with-affix">
-                <span class="input-affix prefix">$</span>
-                <input type="number" id="inpUtilVal" class="calc-input has-prefix" value="120" min="0" step="any">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Rate / Percentage / Factor</label>
-              <div class="input-with-affix">
-                <input type="number" id="inpUtilFactor" class="calc-input has-suffix" value="18" min="0" step="any">
-                <span class="input-affix suffix">%</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Split / Quantity</label>
-              <input type="number" id="inpUtilSplit" class="calc-input" value="3" min="1" step="1">
-            </div>
-            
+        <div class="form-group">
+          <label class="form-label">Initial Investment / Principal</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix">$</span>
+            <input type="number" id="inpInitInv" class="calc-input has-prefix" value="10000" min="0" step="500">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Monthly Contribution</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix">$</span>
+            <input type="number" id="inpMonthlyInv" class="calc-input has-prefix" value="500" min="0" step="50">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Investment Duration (Years)</label>
+          <input type="number" id="inpInvYrs" class="calc-input" value="15" min="1" max="50">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Estimated Annual Return Rate</label>
+          <div class="input-with-affix">
+            <input type="number" id="inpInvRate" class="calc-input has-suffix" value="8" min="0.1" max="40" step="0.1">
+            <span class="input-affix suffix">%</span>
+          </div>
+        </div>
+        
       <button type="button" class="btn-calc-primary" onclick="calculate()">
         <i class="fa-solid fa-calculator"></i> Recalculate
       </button>
@@ -89,15 +96,17 @@
         <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
       </div>
       
-            <div class="result-hero-box">
-              <div class="result-hero-label">Calculated Final Amount</div>
-              <div class="result-hero-val" id="resUtilTotal">$141.60</div>
-            </div>
-            <div class="result-breakdown-list">
-              <div class="result-row"><span class="label">Amount per Person / Unit</span><span class="val" id="resUtilPerUnit">$47.20</span></div>
-              <div class="result-row"><span class="label">Additional Value Added</span><span class="val" id="resUtilAdd">$21.60</span></div>
-            </div>
-            
+        <div class="result-hero-box">
+          <div class="result-hero-label">Estimated Future Value</div>
+          <div class="result-hero-val" id="resInvEnd">$206,854.72</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Initial Principal</span><span class="val" id="resInvInit">$10,000.00</span></div>
+          <div class="result-row"><span class="label">Total Additional Contributions</span><span class="val" id="resInvContribs">$90,000.00</span></div>
+          <div class="result-row"><span class="label">Total Compound Interest</span><span class="val" id="resInvGrowth">$106,854.72</span></div>
+        </div>
+        <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
+        
     </div>
   </div>
 
@@ -148,22 +157,48 @@
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
 
-            function calculate() {
-              var v = parseFloat(document.getElementById('inpUtilVal').value) || 0;
-              var f = (parseFloat(document.getElementById('inpUtilFactor').value) || 0) / 100;
-              var n = Math.max(1, parseInt(document.getElementById('inpUtilSplit').value) || 1);
+        function calculate() {
+          var P = parseFloat(document.getElementById('inpInitInv').value) || 0;
+          var PMT = parseFloat(document.getElementById('inpMonthlyInv').value) || 0;
+          var yrs = parseFloat(document.getElementById('inpInvYrs').value) || 15;
+          var r = (parseFloat(document.getElementById('inpInvRate').value) || 8) / 100;
 
-              var added = v * f;
-              var total = v + added;
-              var perUnit = total / n;
+          var labels = [];
+          var balanceData = [];
+          var contribData = [];
 
-              document.getElementById('resUtilTotal').textContent = CalcCore.formatCurrency(total);
-              document.getElementById('resUtilPerUnit').textContent = CalcCore.formatCurrency(perUnit);
-              document.getElementById('resUtilAdd').textContent = CalcCore.formatCurrency(added);
+          var balance = P;
+          var totalContrib = P;
+
+          for (var y = 0; y <= yrs; y++) {
+            labels.push('Yr ' + y);
+            if (y === 0) {
+              balanceData.push(P);
+              contribData.push(P);
+            } else {
+              for (var m = 0; m < 12; m++) {
+                balance = balance * (1 + r / 12) + PMT;
+                totalContrib += PMT;
+              }
+              balanceData.push(balance);
+              contribData.push(totalContrib);
             }
-            document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-            calculate();
-            
+          }
+
+          var growth = Math.max(0, balance - totalContrib);
+          document.getElementById('resInvEnd').textContent = CalcCore.formatCurrency(balance);
+          document.getElementById('resInvInit').textContent = CalcCore.formatCurrency(P);
+          document.getElementById('resInvContribs').textContent = CalcCore.formatCurrency(totalContrib - P);
+          document.getElementById('resInvGrowth').textContent = CalcCore.formatCurrency(growth);
+
+          CalcCore.renderLineChart('calcChart', labels, [
+            { label: 'Total Balance ($)', data: balanceData, borderColor: '#0d9488', backgroundColor: 'rgba(13,148,136,0.1)', fill: true, tension: 0.3 },
+            { label: 'Total Invested ($)', data: contribData, borderColor: '#0284c7', backgroundColor: 'transparent', borderDash: [5, 5], tension: 0 }
+          ]);
+        }
+        document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
 </script>
 </body>
 </html>

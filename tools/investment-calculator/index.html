@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Investment Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online investment calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online investment calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/investment-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Investment Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/investment-calculator/",
-  "description": "Free online investment calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online investment calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,38 +49,38 @@
       <span>Investment Calculator</span>
     </div>
     <h1 class="calc-main-title">Investment Calculator</h1>
-    <p class="calc-main-desc">Free online investment calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online investment calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-chart-line-up" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
         <div class="form-group">
-          <label class="form-label">Initial Investment Amount</label>
+          <label class="form-label">Initial Investment / Principal</label>
           <div class="input-with-affix">
             <span class="input-affix prefix">$</span>
-            <input type="number" id="inpInitInv" class="calc-input has-prefix" value="15000" min="0" step="500">
+            <input type="number" id="inpInitInv" class="calc-input has-prefix" value="10000" min="0" step="500">
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label">Monthly Additional Contribution</label>
+          <label class="form-label">Monthly Contribution</label>
           <div class="input-with-affix">
             <span class="input-affix prefix">$</span>
-            <input type="number" id="inpMonthlyInv" class="calc-input has-prefix" value="600" min="0" step="50">
+            <input type="number" id="inpMonthlyInv" class="calc-input has-prefix" value="500" min="0" step="50">
           </div>
         </div>
         <div class="form-group">
           <label class="form-label">Investment Duration (Years)</label>
-          <input type="number" id="inpInvYrs" class="calc-input" value="20" min="1" max="60">
+          <input type="number" id="inpInvYrs" class="calc-input" value="15" min="1" max="50">
         </div>
         <div class="form-group">
           <label class="form-label">Estimated Annual Return Rate</label>
           <div class="input-with-affix">
-            <input type="number" id="inpInvRate" class="calc-input has-suffix" value="8.5" min="0.1" max="40" step="0.1">
+            <input type="number" id="inpInvRate" class="calc-input has-suffix" value="8" min="0.1" max="40" step="0.1">
             <span class="input-affix suffix">%</span>
           </div>
         </div>
@@ -97,13 +97,13 @@
       </div>
       
         <div class="result-hero-box">
-          <div class="result-hero-label">Estimated Future Portfolio Value</div>
-          <div class="result-hero-val" id="resInvEnd">$485,392.41</div>
+          <div class="result-hero-label">Estimated Future Value</div>
+          <div class="result-hero-val" id="resInvEnd">$206,854.72</div>
         </div>
         <div class="result-breakdown-list">
-          <div class="result-row"><span class="label">Initial Principal</span><span class="val" id="resInvInit">$15,000.00</span></div>
-          <div class="result-row"><span class="label">Total Contributions</span><span class="val" id="resInvContribs">$144,000.00</span></div>
-          <div class="result-row"><span class="label">Total Growth &amp; Compound Interest</span><span class="val" id="resInvGrowth">$326,392.41</span></div>
+          <div class="result-row"><span class="label">Initial Principal</span><span class="val" id="resInvInit">$10,000.00</span></div>
+          <div class="result-row"><span class="label">Total Additional Contributions</span><span class="val" id="resInvContribs">$90,000.00</span></div>
+          <div class="result-row"><span class="label">Total Compound Interest</span><span class="val" id="resInvGrowth">$106,854.72</span></div>
         </div>
         <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
         
@@ -160,8 +160,8 @@
         function calculate() {
           var P = parseFloat(document.getElementById('inpInitInv').value) || 0;
           var PMT = parseFloat(document.getElementById('inpMonthlyInv').value) || 0;
-          var yrs = parseFloat(document.getElementById('inpInvYrs').value) || 20;
-          var r = (parseFloat(document.getElementById('inpInvRate').value) || 8.5) / 100;
+          var yrs = parseFloat(document.getElementById('inpInvYrs').value) || 15;
+          var r = (parseFloat(document.getElementById('inpInvRate').value) || 8) / 100;
 
           var labels = [];
           var balanceData = [];

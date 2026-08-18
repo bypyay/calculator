@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Concrete Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online concrete calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online concrete calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/concrete-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Concrete Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/concrete-calculator/",
-  "description": "Free online concrete calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online concrete calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,35 +49,87 @@
       <span>Concrete Calculator</span>
     </div>
     <h1 class="calc-main-title">Concrete Calculator</h1>
-    <p class="calc-main-desc">Free online concrete calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online concrete calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-trowel-bricks" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
-            <div class="form-group">
-              <label class="form-label">Primary Amount / Measure</label>
-              <div class="input-with-affix">
-                <span class="input-affix prefix">$</span>
-                <input type="number" id="inpUtilVal" class="calc-input has-prefix" value="120" min="0" step="any">
-              </div>
+        <div class="unit-toggle-group">
+          <button type="button" class="unit-btn active" id="btnSlab" onclick="setConcreteType('slab')">Slab / Wall / Footing</button>
+          <button type="button" class="unit-btn" id="btnHole" onclick="setConcreteType('hole')">Round Column / Hole</button>
+        </div>
+
+        <div id="slabInputs">
+          <div class="form-group">
+            <label class="form-label">Length</label>
+            <div style="display:flex; gap:10px;">
+              <input type="number" id="slabLen" class="calc-input" value="10" min="0.1" step="0.5" style="flex:2;">
+              <select id="slabLenUnit" class="calc-select" style="flex:1.2;">
+                <option value="ft" selected>Feet</option>
+                <option value="in">Inches</option>
+                <option value="yd">Yards</option>
+                <option value="m">Meters</option>
+              </select>
             </div>
-            <div class="form-group">
-              <label class="form-label">Rate / Percentage / Factor</label>
-              <div class="input-with-affix">
-                <input type="number" id="inpUtilFactor" class="calc-input has-suffix" value="18" min="0" step="any">
-                <span class="input-affix suffix">%</span>
-              </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Width</label>
+            <div style="display:flex; gap:10px;">
+              <input type="number" id="slabWidth" class="calc-input" value="10" min="0.1" step="0.5" style="flex:2;">
+              <select id="slabWidthUnit" class="calc-select" style="flex:1.2;">
+                <option value="ft" selected>Feet</option>
+                <option value="in">Inches</option>
+                <option value="yd">Yards</option>
+                <option value="m">Meters</option>
+              </select>
             </div>
-            <div class="form-group">
-              <label class="form-label">Split / Quantity</label>
-              <input type="number" id="inpUtilSplit" class="calc-input" value="3" min="1" step="1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Thickness or Height</label>
+            <div style="display:flex; gap:10px;">
+              <input type="number" id="slabThick" class="calc-input" value="4" min="0.1" step="0.5" style="flex:2;">
+              <select id="slabThickUnit" class="calc-select" style="flex:1.2;">
+                <option value="in" selected>Inches</option>
+                <option value="ft">Feet</option>
+                <option value="cm">Centimeters</option>
+              </select>
             </div>
-            
+          </div>
+        </div>
+
+        <div id="holeInputs" style="display:none;">
+          <div class="form-group">
+            <label class="form-label">Diameter</label>
+            <div style="display:flex; gap:10px;">
+              <input type="number" id="holeDiam" class="calc-input" value="12" min="0.1" step="1" style="flex:2;">
+              <select id="holeDiamUnit" class="calc-select" style="flex:1.2;">
+                <option value="in" selected>Inches</option>
+                <option value="ft">Feet</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Depth / Height</label>
+            <div style="display:flex; gap:10px;">
+              <input type="number" id="holeDepth" class="calc-input" value="4" min="0.1" step="0.5" style="flex:2;">
+              <select id="holeDepthUnit" class="calc-select" style="flex:1.2;">
+                <option value="ft" selected>Feet</option>
+                <option value="in">Inches</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Quantity</label>
+          <input type="number" id="concQty" class="calc-input" value="1" min="1" step="1">
+        </div>
+        
       <button type="button" class="btn-calc-primary" onclick="calculate()">
         <i class="fa-solid fa-calculator"></i> Recalculate
       </button>
@@ -89,15 +141,19 @@
         <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
       </div>
       
-            <div class="result-hero-box">
-              <div class="result-hero-label">Calculated Final Amount</div>
-              <div class="result-hero-val" id="resUtilTotal">$141.60</div>
-            </div>
-            <div class="result-breakdown-list">
-              <div class="result-row"><span class="label">Amount per Person / Unit</span><span class="val" id="resUtilPerUnit">$47.20</span></div>
-              <div class="result-row"><span class="label">Additional Value Added</span><span class="val" id="resUtilAdd">$21.60</span></div>
-            </div>
-            
+        <div class="result-hero-box">
+          <div class="result-hero-label">Concrete Volume Needed</div>
+          <div class="result-hero-val" id="resYards">1.23 yd&sup3;</div>
+          <div style="font-weight:600; color:#0f766e; margin-top:4px;" id="resCuFt">33.33 cu ft · 0.94 m&sup3;</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">60 lb Pre-mix Bags</span><span class="val" id="resBags60">75 Bags</span></div>
+          <div class="result-row"><span class="label">80 lb Pre-mix Bags</span><span class="val" id="resBags80">56 Bags</span></div>
+          <div class="result-row"><span class="label">Estimated Total Weight</span><span class="val" id="resWeight">4,467 lbs (2.23 tons)</span></div>
+          <div class="result-row"><span class="label">Recommended Order (+10% buffer)</span><span class="val" id="resBuffer">1.35 yd&sup3;</span></div>
+        </div>
+        <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
+        
     </div>
   </div>
 
@@ -148,22 +204,60 @@
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
 
-            function calculate() {
-              var v = parseFloat(document.getElementById('inpUtilVal').value) || 0;
-              var f = (parseFloat(document.getElementById('inpUtilFactor').value) || 0) / 100;
-              var n = Math.max(1, parseInt(document.getElementById('inpUtilSplit').value) || 1);
+        var concType = 'slab';
+        function setConcreteType(t) {
+          concType = t;
+          document.getElementById('btnSlab').classList.toggle('active', t === 'slab');
+          document.getElementById('btnHole').classList.toggle('active', t === 'hole');
+          document.getElementById('slabInputs').style.display = t === 'slab' ? 'block' : 'none';
+          document.getElementById('holeInputs').style.display = t === 'hole' ? 'block' : 'none';
+          calculate();
+        }
 
-              var added = v * f;
-              var total = v + added;
-              var perUnit = total / n;
+        function toFeet(val, unit) {
+          if (unit === 'in') return val / 12;
+          if (unit === 'yd') return val * 3;
+          if (unit === 'm') return val * 3.28084;
+          if (unit === 'cm') return val / 30.48;
+          return val;
+        }
 
-              document.getElementById('resUtilTotal').textContent = CalcCore.formatCurrency(total);
-              document.getElementById('resUtilPerUnit').textContent = CalcCore.formatCurrency(perUnit);
-              document.getElementById('resUtilAdd').textContent = CalcCore.formatCurrency(added);
-            }
-            document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-            calculate();
-            
+        function calculate() {
+          var qty = parseFloat(document.getElementById('concQty').value) || 1;
+          var cuFt = 0;
+
+          if (concType === 'slab') {
+            var l = toFeet(parseFloat(document.getElementById('slabLen').value) || 0, document.getElementById('slabLenUnit').value);
+            var w = toFeet(parseFloat(document.getElementById('slabWidth').value) || 0, document.getElementById('slabWidthUnit').value);
+            var h = toFeet(parseFloat(document.getElementById('slabThick').value) || 0, document.getElementById('slabThickUnit').value);
+            cuFt = l * w * h * qty;
+          } else {
+            var d = toFeet(parseFloat(document.getElementById('holeDiam').value) || 0, document.getElementById('holeDiamUnit').value);
+            var h = toFeet(parseFloat(document.getElementById('holeDepth').value) || 0, document.getElementById('holeDepthUnit').value);
+            var r = d / 2;
+            cuFt = Math.PI * r * r * h * qty;
+          }
+
+          var cuYards = cuFt / 27;
+          var cuMeters = cuFt * 0.0283168;
+          var bags60 = Math.ceil(cuFt / 0.45);
+          var bags80 = Math.ceil(cuFt / 0.60);
+          var weightLbs = cuFt * 134; // approx 134 lbs per cu ft of mixed concrete
+          var weightTons = weightLbs / 2000;
+          var bufferYards = cuYards * 1.1;
+
+          document.getElementById('resYards').innerHTML = cuYards.toFixed(2) + ' yd&sup3;';
+          document.getElementById('resCuFt').innerHTML = cuFt.toFixed(2) + ' cu ft · ' + cuMeters.toFixed(2) + ' m&sup3;';
+          document.getElementById('resBags60').textContent = bags60.toLocaleString() + ' Bags';
+          document.getElementById('resBags80').textContent = bags80.toLocaleString() + ' Bags';
+          document.getElementById('resWeight').textContent = Math.round(weightLbs).toLocaleString() + ' lbs (' + weightTons.toFixed(2) + ' tons)';
+          document.getElementById('resBuffer').innerHTML = bufferYards.toFixed(2) + ' yd&sup3;';
+
+          CalcCore.renderDoughnutChart('calcChart', ['Net Concrete Volume', '+10% Waste Buffer'], [cuYards, cuYards * 0.1], ['#0d9488', '#f59e0b']);
+        }
+        document.querySelectorAll('.calc-input, .calc-select').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
 </script>
 </body>
 </html>

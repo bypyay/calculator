@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Present Value Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online present value calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online present value calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/present-value-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Present Value Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/present-value-calculator/",
-  "description": "Free online present value calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online present value calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,35 +49,54 @@
       <span>Present Value Calculator</span>
     </div>
     <h1 class="calc-main-title">Present Value Calculator</h1>
-    <p class="calc-main-desc">Free online present value calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online present value calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-hand-holding-dollar" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
-            <div class="form-group">
-              <label class="form-label">Primary Amount / Measure</label>
-              <div class="input-with-affix">
-                <span class="input-affix prefix">$</span>
-                <input type="number" id="inpUtilVal" class="calc-input has-prefix" value="120" min="0" step="any">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Rate / Percentage / Factor</label>
-              <div class="input-with-affix">
-                <input type="number" id="inpUtilFactor" class="calc-input has-suffix" value="18" min="0" step="any">
-                <span class="input-affix suffix">%</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Split / Quantity</label>
-              <input type="number" id="inpUtilSplit" class="calc-input" value="3" min="1" step="1">
-            </div>
-            
+        <div class="form-group">
+          <label class="form-label">Home Price</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix">$</span>
+            <input type="number" id="inpHomePrice" class="calc-input has-prefix" value="400000" min="1000" step="5000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Down Payment (20%)</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix">$</span>
+            <input type="number" id="inpDownPayment" class="calc-input has-prefix" value="80000" min="0" step="5000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Loan Term</label>
+          <select id="inpLoanTerm" class="calc-select">
+            <option value="30" selected>30 Years Fixed</option>
+            <option value="20">20 Years Fixed</option>
+            <option value="15">15 Years Fixed</option>
+            <option value="10">10 Years Fixed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Interest Rate</label>
+          <div class="input-with-affix">
+            <input type="number" id="inpInterestRate" class="calc-input has-suffix" value="6.5" min="0.1" max="25" step="0.1">
+            <span class="input-affix suffix">%</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Annual Property Tax &amp; Insurance</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix">$</span>
+            <input type="number" id="inpTaxIns" class="calc-input has-prefix" value="6000" min="0" step="100">
+          </div>
+        </div>
+        
       <button type="button" class="btn-calc-primary" onclick="calculate()">
         <i class="fa-solid fa-calculator"></i> Recalculate
       </button>
@@ -89,15 +108,18 @@
         <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
       </div>
       
-            <div class="result-hero-box">
-              <div class="result-hero-label">Calculated Final Amount</div>
-              <div class="result-hero-val" id="resUtilTotal">$141.60</div>
-            </div>
-            <div class="result-breakdown-list">
-              <div class="result-row"><span class="label">Amount per Person / Unit</span><span class="val" id="resUtilPerUnit">$47.20</span></div>
-              <div class="result-row"><span class="label">Additional Value Added</span><span class="val" id="resUtilAdd">$21.60</span></div>
-            </div>
-            
+        <div class="result-hero-box">
+          <div class="result-hero-label">Total Monthly Payment</div>
+          <div class="result-hero-val" id="resMonthly">$2,522.61</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Principal &amp; Interest</span><span class="val" id="resPI">$2,022.61</span></div>
+          <div class="result-row"><span class="label">Taxes &amp; Insurance</span><span class="val" id="resTax">$500.00</span></div>
+          <div class="result-row"><span class="label">Total Loan Amount</span><span class="val" id="resLoanAmt">$320,000.00</span></div>
+          <div class="result-row"><span class="label">Total Interest Paid</span><span class="val" id="resTotalInterest">$408,139.60</span></div>
+        </div>
+        <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
+        
     </div>
   </div>
 
@@ -148,22 +170,37 @@
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
 
-            function calculate() {
-              var v = parseFloat(document.getElementById('inpUtilVal').value) || 0;
-              var f = (parseFloat(document.getElementById('inpUtilFactor').value) || 0) / 100;
-              var n = Math.max(1, parseInt(document.getElementById('inpUtilSplit').value) || 1);
+        function calculate() {
+          var hp = parseFloat(document.getElementById('inpHomePrice').value) || 0;
+          var dp = parseFloat(document.getElementById('inpDownPayment').value) || 0;
+          var years = parseFloat(document.getElementById('inpLoanTerm').value) || 30;
+          var rate = (parseFloat(document.getElementById('inpInterestRate').value) || 6.5) / 100 / 12;
+          var taxIns = (parseFloat(document.getElementById('inpTaxIns').value) || 0) / 12;
 
-              var added = v * f;
-              var total = v + added;
-              var perUnit = total / n;
+          var P = Math.max(0, hp - dp);
+          var n = years * 12;
+          var pi = 0;
+          if (rate > 0) {
+            pi = P * (rate * Math.pow(1 + rate, n)) / (Math.pow(1 + rate, n) - 1);
+          } else {
+            pi = P / n;
+          }
 
-              document.getElementById('resUtilTotal').textContent = CalcCore.formatCurrency(total);
-              document.getElementById('resUtilPerUnit').textContent = CalcCore.formatCurrency(perUnit);
-              document.getElementById('resUtilAdd').textContent = CalcCore.formatCurrency(added);
-            }
-            document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-            calculate();
-            
+          var totalMonthly = pi + taxIns;
+          var totalCost = pi * n;
+          var totalInterest = Math.max(0, totalCost - P);
+
+          document.getElementById('resMonthly').textContent = CalcCore.formatCurrency(totalMonthly);
+          document.getElementById('resPI').textContent = CalcCore.formatCurrency(pi);
+          document.getElementById('resTax').textContent = CalcCore.formatCurrency(taxIns);
+          document.getElementById('resLoanAmt').textContent = CalcCore.formatCurrency(P);
+          document.getElementById('resTotalInterest').textContent = CalcCore.formatCurrency(totalInterest);
+
+          CalcCore.renderDoughnutChart('calcChart', ['Principal Loan', 'Total Interest', 'Taxes & Insurance'], [P, totalInterest, taxIns * n], ['#0d9488', '#f59e0b', '#0284c7']);
+        }
+        document.querySelectorAll('.calc-input, .calc-select').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
 </script>
 </body>
 </html>

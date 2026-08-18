@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tile Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online tile calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online tile calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/tile-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Tile Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/tile-calculator/",
-  "description": "Free online tile calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online tile calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,35 +49,38 @@
       <span>Tile Calculator</span>
     </div>
     <h1 class="calc-main-title">Tile Calculator</h1>
-    <p class="calc-main-desc">Free online tile calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online tile calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-trowel-bricks" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
-            <div class="form-group">
-              <label class="form-label">Primary Amount / Measure</label>
-              <div class="input-with-affix">
-                <span class="input-affix prefix">$</span>
-                <input type="number" id="inpUtilVal" class="calc-input has-prefix" value="120" min="0" step="any">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Rate / Percentage / Factor</label>
-              <div class="input-with-affix">
-                <input type="number" id="inpUtilFactor" class="calc-input has-suffix" value="18" min="0" step="any">
-                <span class="input-affix suffix">%</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Split / Quantity</label>
-              <input type="number" id="inpUtilSplit" class="calc-input" value="3" min="1" step="1">
-            </div>
-            
+        <div class="form-group">
+          <label class="form-label">Area Length (Feet)</label>
+          <input type="number" id="areaLen" class="calc-input" value="15" min="1" step="0.5">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Area Width (Feet)</label>
+          <input type="number" id="areaWidth" class="calc-input" value="12" min="1" step="0.5">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Thickness / Depth (Inches)</label>
+          <input type="number" id="matDepth" class="calc-input" value="3" min="0.1" step="0.5">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Waste &amp; Cutting Buffer</label>
+          <select id="wastePct" class="calc-select">
+            <option value="10" selected>10% Extra Buffer (Recommended)</option>
+            <option value="15">15% Extra (Diagonal / Complex)</option>
+            <option value="5">5% Extra (Simple)</option>
+            <option value="0">0% (Exact)</option>
+          </select>
+        </div>
+        
       <button type="button" class="btn-calc-primary" onclick="calculate()">
         <i class="fa-solid fa-calculator"></i> Recalculate
       </button>
@@ -89,15 +92,19 @@
         <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
       </div>
       
-            <div class="result-hero-box">
-              <div class="result-hero-label">Calculated Final Amount</div>
-              <div class="result-hero-val" id="resUtilTotal">$141.60</div>
-            </div>
-            <div class="result-breakdown-list">
-              <div class="result-row"><span class="label">Amount per Person / Unit</span><span class="val" id="resUtilPerUnit">$47.20</span></div>
-              <div class="result-row"><span class="label">Additional Value Added</span><span class="val" id="resUtilAdd">$21.60</span></div>
-            </div>
-            
+        <div class="result-hero-box">
+          <div class="result-hero-label">Total Material Required</div>
+          <div class="result-hero-val" id="resMatPrimary">1.83 yd&sup3;</div>
+          <div style="font-weight:600; color:#0f766e; margin-top:4px;" id="resSqFt">180.00 sq ft Area</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Total Square Footage</span><span class="val" id="resArea">180 sq ft</span></div>
+          <div class="result-row"><span class="label">Volume in Cubic Feet</span><span class="val" id="resMatCuFt">45.00 cu ft</span></div>
+          <div class="result-row"><span class="label">Total with Buffer</span><span class="val" id="resMatBuffer">2.02 yd&sup3; (49.5 cu ft)</span></div>
+          <div class="result-row"><span class="label">Standard Bags (2 cu ft each)</span><span class="val" id="resBags">25 Bags</span></div>
+        </div>
+        <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
+        
     </div>
   </div>
 
@@ -148,22 +155,31 @@
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
 
-            function calculate() {
-              var v = parseFloat(document.getElementById('inpUtilVal').value) || 0;
-              var f = (parseFloat(document.getElementById('inpUtilFactor').value) || 0) / 100;
-              var n = Math.max(1, parseInt(document.getElementById('inpUtilSplit').value) || 1);
+        function calculate() {
+          var l = parseFloat(document.getElementById('areaLen').value) || 0;
+          var w = parseFloat(document.getElementById('areaWidth').value) || 0;
+          var dIn = parseFloat(document.getElementById('matDepth').value) || 0;
+          var waste = (parseFloat(document.getElementById('wastePct').value) || 10) / 100;
 
-              var added = v * f;
-              var total = v + added;
-              var perUnit = total / n;
+          var sqFt = l * w;
+          var cuFt = sqFt * (dIn / 12);
+          var cuYd = cuFt / 27;
+          var totalCuYd = cuYd * (1 + waste);
+          var totalCuFt = cuFt * (1 + waste);
+          var bags = Math.ceil(totalCuFt / 2);
 
-              document.getElementById('resUtilTotal').textContent = CalcCore.formatCurrency(total);
-              document.getElementById('resUtilPerUnit').textContent = CalcCore.formatCurrency(perUnit);
-              document.getElementById('resUtilAdd').textContent = CalcCore.formatCurrency(added);
-            }
-            document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-            calculate();
-            
+          document.getElementById('resMatPrimary').innerHTML = totalCuYd.toFixed(2) + ' yd&sup3;';
+          document.getElementById('resSqFt').textContent = sqFt.toFixed(1) + ' sq ft Area';
+          document.getElementById('resArea').textContent = sqFt.toLocaleString() + ' sq ft';
+          document.getElementById('resMatCuFt').textContent = cuFt.toFixed(2) + ' cu ft';
+          document.getElementById('resMatBuffer').innerHTML = totalCuYd.toFixed(2) + ' yd&sup3; (' + totalCuFt.toFixed(1) + ' cu ft)';
+          document.getElementById('resBags').textContent = bags.toLocaleString() + ' Bags';
+
+          CalcCore.renderDoughnutChart('calcChart', ['Base Material', 'Waste / Extra Buffer'], [cuYd, cuYd * waste], ['#0d9488', '#f59e0b']);
+        }
+        document.querySelectorAll('.calc-input, .calc-select').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
 </script>
 </body>
 </html>

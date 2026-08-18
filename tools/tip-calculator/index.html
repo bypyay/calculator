@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tip Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online tip calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online tip calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/tip-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Tip Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/tip-calculator/",
-  "description": "Free online tip calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online tip calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,35 +49,35 @@
       <span>Tip Calculator</span>
     </div>
     <h1 class="calc-main-title">Tip Calculator</h1>
-    <p class="calc-main-desc">Free online tip calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online tip calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-receipt" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
-            <div class="form-group">
-              <label class="form-label">Primary Amount / Measure</label>
-              <div class="input-with-affix">
-                <span class="input-affix prefix">$</span>
-                <input type="number" id="inpUtilVal" class="calc-input has-prefix" value="120" min="0" step="any">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Rate / Percentage / Factor</label>
-              <div class="input-with-affix">
-                <input type="number" id="inpUtilFactor" class="calc-input has-suffix" value="18" min="0" step="any">
-                <span class="input-affix suffix">%</span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Split / Quantity</label>
-              <input type="number" id="inpUtilSplit" class="calc-input" value="3" min="1" step="1">
-            </div>
-            
+        <div class="form-group">
+          <label class="form-label">Bill Amount</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix">$</span>
+            <input type="number" id="tipBill" class="calc-input has-prefix" value="85.50" min="0" step="0.5">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tip Percentage</label>
+          <div class="input-with-affix">
+            <input type="number" id="tipPct" class="calc-input has-suffix" value="18" min="0" max="100" step="1">
+            <span class="input-affix suffix">%</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Split Among Number of People</label>
+          <input type="number" id="tipPeople" class="calc-input" value="3" min="1" max="100" step="1">
+        </div>
+        
       <button type="button" class="btn-calc-primary" onclick="calculate()">
         <i class="fa-solid fa-calculator"></i> Recalculate
       </button>
@@ -89,15 +89,17 @@
         <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
       </div>
       
-            <div class="result-hero-box">
-              <div class="result-hero-label">Calculated Final Amount</div>
-              <div class="result-hero-val" id="resUtilTotal">$141.60</div>
-            </div>
-            <div class="result-breakdown-list">
-              <div class="result-row"><span class="label">Amount per Person / Unit</span><span class="val" id="resUtilPerUnit">$47.20</span></div>
-              <div class="result-row"><span class="label">Additional Value Added</span><span class="val" id="resUtilAdd">$21.60</span></div>
-            </div>
-            
+        <div class="result-hero-box">
+          <div class="result-hero-label">Total Amount Per Person</div>
+          <div class="result-hero-val" id="resTipPerPerson">$33.63</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Total Tip Amount</span><span class="val" id="resTipTotal">$15.39</span></div>
+          <div class="result-row"><span class="label">Tip Per Person</span><span class="val" id="resTipPerson">$5.13</span></div>
+          <div class="result-row"><span class="label">Total Bill with Tip</span><span class="val" id="resGrandTotal">$100.89</span></div>
+        </div>
+        <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
+        
     </div>
   </div>
 
@@ -148,22 +150,26 @@
 <script src="../../assets/js/calculator-core.js"></script>
 <script>
 
-            function calculate() {
-              var v = parseFloat(document.getElementById('inpUtilVal').value) || 0;
-              var f = (parseFloat(document.getElementById('inpUtilFactor').value) || 0) / 100;
-              var n = Math.max(1, parseInt(document.getElementById('inpUtilSplit').value) || 1);
+        function calculate() {
+          var bill = parseFloat(document.getElementById('tipBill').value) || 0;
+          var pct = (parseFloat(document.getElementById('tipPct').value) || 18) / 100;
+          var people = Math.max(1, parseInt(document.getElementById('tipPeople').value) || 1);
 
-              var added = v * f;
-              var total = v + added;
-              var perUnit = total / n;
+          var tip = bill * pct;
+          var total = bill + tip;
+          var perPerson = total / people;
+          var tipPerPerson = tip / people;
 
-              document.getElementById('resUtilTotal').textContent = CalcCore.formatCurrency(total);
-              document.getElementById('resUtilPerUnit').textContent = CalcCore.formatCurrency(perUnit);
-              document.getElementById('resUtilAdd').textContent = CalcCore.formatCurrency(added);
-            }
-            document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
-            calculate();
-            
+          document.getElementById('resTipPerPerson').textContent = CalcCore.formatCurrency(perPerson);
+          document.getElementById('resTipTotal').textContent = CalcCore.formatCurrency(tip);
+          document.getElementById('resTipPerson').textContent = CalcCore.formatCurrency(tipPerPerson);
+          document.getElementById('resGrandTotal').textContent = CalcCore.formatCurrency(total);
+
+          CalcCore.renderDoughnutChart('calcChart', ['Base Bill', 'Tip Amount'], [bill, tip], ['#0d9488', '#f59e0b']);
+        }
+        document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
 </script>
 </body>
 </html>

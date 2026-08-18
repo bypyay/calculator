@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Home Equity Loan Calculator — Free Online Calculator | Daily1Step</title>
-<meta name="description" content="Free online home equity loan calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.">
+<meta name="description" content="Free online home equity loan calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.">
 <link rel="canonical" href="https://bypyay.github.io/calculator/tools/home-equity-loan-calculator/">
-<link rel="stylesheet" href="../../assets/css/style.css?v=2">
+<link rel="stylesheet" href="../../assets/css/style.css?v=3">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <script type="application/ld+json">
 {
@@ -14,7 +14,7 @@
   "@type": "WebApplication",
   "name": "Home Equity Loan Calculator - Daily1Step",
   "url": "https://bypyay.github.io/calculator/tools/home-equity-loan-calculator/",
-  "description": "Free online home equity loan calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.",
+  "description": "Free online home equity loan calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.",
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "All modern web browsers",
   "offers": {
@@ -49,31 +49,31 @@
       <span>Home Equity Loan Calculator</span>
     </div>
     <h1 class="calc-main-title">Home Equity Loan Calculator</h1>
-    <p class="calc-main-desc">Free online home equity loan calculator by Daily1Step. Calculate instant results with interactive parameters, charts, formulas, and FAQs.</p>
+    <p class="calc-main-desc">Free online home equity loan calculator by Daily1Step. Instant calculations, interactive parameters, formula explanations, and FAQs.</p>
   </div>
 
   <div class="calc-grid-layout">
     <!-- Left Inputs Card -->
     <div class="calc-card">
       <div class="calc-card-title">
-        <span><i class="fa-solid fa-hand-holding-dollar" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
+        <span><i class="fa-solid fa-sliders" style="color:var(--primary); margin-right:8px;"></i> Input Parameters</span>
       </div>
       
         <div class="form-group">
-          <label class="form-label">Total Loan / Debt Balance</label>
+          <label class="form-label">Total Loan Amount</label>
           <div class="input-with-affix">
             <span class="input-affix prefix">$</span>
-            <input type="number" id="inpLoanP" class="calc-input has-prefix" value="30000" min="100" step="500">
+            <input type="number" id="inpLoanP" class="calc-input has-prefix" value="25000" min="100" step="500">
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label">Payoff Term (Years)</label>
-          <input type="number" id="inpLoanYrs" class="calc-input" value="5" min="0.5" max="30" step="0.5">
+          <label class="form-label">Loan Term (Years)</label>
+          <input type="number" id="inpLoanYrs" class="calc-input" value="5" min="1" max="30" step="1">
         </div>
         <div class="form-group">
           <label class="form-label">Annual Interest Rate (APR)</label>
           <div class="input-with-affix">
-            <input type="number" id="inpLoanRate" class="calc-input has-suffix" value="7.2" min="0" max="40" step="0.1">
+            <input type="number" id="inpLoanRate" class="calc-input has-suffix" value="7.5" min="0" max="40" step="0.1">
             <span class="input-affix suffix">%</span>
           </div>
         </div>
@@ -90,13 +90,13 @@
       </div>
       
         <div class="result-hero-box">
-          <div class="result-hero-label">Monthly EMI Payment</div>
-          <div class="result-hero-val" id="resLoanEMI">$596.88</div>
+          <div class="result-hero-label">Monthly Payment (EMI)</div>
+          <div class="result-hero-val" id="resLoanEMI">$500.95</div>
         </div>
         <div class="result-breakdown-list">
-          <div class="result-row"><span class="label">Total Payments (Principal + Interest)</span><span class="val" id="resLoanTotalPay">$35,812.80</span></div>
-          <div class="result-row"><span class="label">Total Principal Borrowed</span><span class="val" id="resLoanPrincipal">$30,000.00</span></div>
-          <div class="result-row"><span class="label">Total Interest Paid</span><span class="val" id="resLoanTotalInt">$5,812.80</span></div>
+          <div class="result-row"><span class="label">Total Payments</span><span class="val" id="resLoanTotalPay">$30,057.00</span></div>
+          <div class="result-row"><span class="label">Total Principal</span><span class="val" id="resLoanPrincipal">$25,000.00</span></div>
+          <div class="result-row"><span class="label">Total Interest Paid</span><span class="val" id="resLoanTotalInt">$5,057.00</span></div>
         </div>
         <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
         
@@ -153,7 +153,7 @@
         function calculate() {
           var P = parseFloat(document.getElementById('inpLoanP').value) || 0;
           var years = parseFloat(document.getElementById('inpLoanYrs').value) || 5;
-          var r = (parseFloat(document.getElementById('inpLoanRate').value) || 7.2) / 100 / 12;
+          var r = (parseFloat(document.getElementById('inpLoanRate').value) || 7.5) / 100 / 12;
           var n = years * 12;
 
           var emi = 0;
