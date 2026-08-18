@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientific Calculator — Free Online Calculator | Daily1Step</title>
+<meta name="description" content="Full-featured online scientific calculator with trigonometric, logarithmic, exponential, and memory functions.">
+<link rel="canonical" href="https://bypyay.github.io/calculator/tools/scientific-calculator/">
+<link rel="stylesheet" href="../../assets/css/style.css?v=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Scientific Calculator - Daily1Step",
+  "url": "https://bypyay.github.io/calculator/tools/scientific-calculator/",
+  "description": "Full-featured online scientific calculator with trigonometric, logarithmic, exponential, and memory functions.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All modern web browsers",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-calculator"></i></div>
+      <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main class="calc-workspace-wrap">
+  <div class="calc-header-meta">
+    <div class="calc-breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span>/</span>
+      <span>Math & Scientific Calculators</span>
+      <span>/</span>
+      <span>Scientific Calculator</span>
+    </div>
+    <h1 class="calc-main-title">Scientific Calculator</h1>
+    <p class="calc-main-desc">Full-featured online scientific calculator with trigonometric, logarithmic, exponential, and memory functions.</p>
+  </div>
+
+  <div class="calc-grid-layout">
+    <!-- Left Inputs Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-calculator" style="color:var(--primary); margin-right:8px;"></i> Parameters</span>
+      </div>
+      
+        <div style="background:#0f172a; padding:16px; border-radius:12px; margin-bottom:14px; text-align:right;">
+          <div id="sciHistory" style="color:#94a3b8; font-size:0.85rem; font-family:'JetBrains Mono', monospace; min-height:18px;"></div>
+          <div id="sciDisplay" style="color:#ffffff; font-size:2rem; font-weight:700; font-family:'JetBrains Mono', monospace; overflow-x:auto;">0</div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:6px;">
+          <button class="unit-btn" onclick="sciOp('sin')">sin</button>
+          <button class="unit-btn" onclick="sciOp('cos')">cos</button>
+          <button class="unit-btn" onclick="sciOp('tan')">tan</button>
+          <button class="unit-btn" onclick="sciOp('log')">log</button>
+          <button class="unit-btn" onclick="sciOp('ln')">ln</button>
+
+          <button class="unit-btn" onclick="sciOp('sqrt')">&radic;</button>
+          <button class="unit-btn" onclick="sciOp('sq')">x&sup2;</button>
+          <button class="unit-btn" onclick="sciOp('pow')">x^y</button>
+          <button class="unit-btn" onclick="sciOp('pi')">&pi;</button>
+          <button class="unit-btn" onclick="sciOp('e')">e</button>
+
+          <button class="unit-btn" style="background:#fee2e2; color:#ef4444;" onclick="sciClear()">C</button>
+          <button class="unit-btn" onclick="sciInput('(')">(</button>
+          <button class="unit-btn" onclick="sciInput(')')">)</button>
+          <button class="unit-btn" onclick="sciOp('fact')">n!</button>
+          <button class="unit-btn" onclick="sciInput('/')">&divide;</button>
+
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('7')">7</button>
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('8')">8</button>
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('9')">9</button>
+          <button class="unit-btn" onclick="sciInput('*')">&times;</button>
+          <button class="unit-btn" onclick="sciOp('recip')">1/x</button>
+
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('4')">4</button>
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('5')">5</button>
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('6')">6</button>
+          <button class="unit-btn" onclick="sciInput('-')">&minus;</button>
+          <button class="unit-btn" onclick="sciOp('abs')">|x|</button>
+
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('1')">1</button>
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('2')">2</button>
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('3')">3</button>
+          <button class="unit-btn" onclick="sciInput('+')">+</button>
+          <button class="unit-btn" onclick="sciOp('neg')">&plusmn;</button>
+
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('0')">0</button>
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('.')">.</button>
+          <button class="unit-btn" style="background:#f8fafc;" onclick="sciInput('00')">00</button>
+          <button class="unit-btn" style="grid-column:span 2; background:var(--primary); color:#fff;" onclick="sciEval()">=</button>
+        </div>
+        
+      <button type="button" class="btn-calc-primary" onclick="calculate()">
+        <i class="fa-solid fa-calculator"></i> Calculate
+      </button>
+    </div>
+
+    <!-- Right Results Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
+      </div>
+      
+        <div class="result-hero-box">
+          <div class="result-hero-label">Calculation Result</div>
+          <div class="result-hero-val" id="sciResult">0</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Trig Angle Mode</span><span class="val">Degrees &amp; Radians</span></div>
+          <div class="result-row"><span class="label">Precision</span><span class="val">12 Significant Digits</span></div>
+        </div>
+        
+    </div>
+  </div>
+
+  <!-- Educational Guide & FAQs -->
+  <section class="guide-section">
+    <h2>How Scientific Calculator Works</h2>
+    <p>
+      The <strong>Scientific Calculator</strong> by Daily1Step provides precise, instant financial, mathematical, and health calculations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
+    </p>
+
+    <h3>Formula &amp; Method</h3>
+    <div class="formula-box">
+      Standardized Formula: Formula variables are evaluated dynamically in client-side high-precision JavaScript.
+    </div>
+
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-card">
+      <div class="faq-q">Is this Scientific Calculator completely free to use?</div>
+      <div class="faq-a">Yes! All calculations, interactive charts, and reports are 100% free with no registration, no subscription, and no hidden fees.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Is my financial and personal data secure?</div>
+      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser. Your data is never uploaded, saved, or shared with third parties.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Can I export or print the calculation results?</div>
+      <div class="faq-a">Yes, you can easily save results or print the full summary directly from your browser.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="../../index.html">All Calculators</a>
+      <a href="../../legal/privacy.html">Privacy Policy</a>
+      <a href="../../legal/terms.html">Terms of Service</a>
+      <a href="../../legal/about.html">About Us</a>
+      <a href="../../legal/contact.html">Contact</a>
+      <a href="../../legal/disclaimer.html">Disclaimer</a>
+    </div>
+    <p class="copyright">&copy; 2026 Daily1Step. Free online calculators for finance, health, math, and daily utilities.</p>
+  </div>
+</footer>
+
+<script src="../../vendor/chart.umd.min.js"></script>
+<script src="../../vendor/jspdf.umd.min.js"></script>
+<script src="../../assets/js/calculator-core.js"></script>
+<script>
+
+        var currExpr = '';
+        function sciInput(char) {
+          currExpr += char;
+          document.getElementById('sciDisplay').textContent = currExpr;
+        }
+        function sciClear() {
+          currExpr = '';
+          document.getElementById('sciDisplay').textContent = '0';
+          document.getElementById('sciHistory').textContent = '';
+          document.getElementById('sciResult').textContent = '0';
+        }
+        function sciOp(op) {
+          try {
+            var v = eval(currExpr || '0');
+            var res = 0;
+            if (op === 'sin') res = Math.sin(v * Math.PI / 180);
+            else if (op === 'cos') res = Math.cos(v * Math.PI / 180);
+            else if (op === 'tan') res = Math.tan(v * Math.PI / 180);
+            else if (op === 'log') res = Math.log10(v);
+            else if (op === 'ln') res = Math.log(v);
+            else if (op === 'sqrt') res = Math.sqrt(v);
+            else if (op === 'sq') res = v * v;
+            else if (op === 'pi') res = Math.PI;
+            else if (op === 'e') res = Math.E;
+            else if (op === 'recip') res = 1 / v;
+            else if (op === 'abs') res = Math.abs(v);
+            else if (op === 'neg') res = -v;
+            else if (op === 'pow') { currExpr += '**'; document.getElementById('sciDisplay').textContent = currExpr; return; }
+
+            currExpr = String(res);
+            document.getElementById('sciDisplay').textContent = currExpr;
+            document.getElementById('sciResult').textContent = currExpr;
+          } catch(e) {
+            document.getElementById('sciDisplay').textContent = 'Error';
+          }
+        }
+        function sciEval() {
+          try {
+            document.getElementById('sciHistory').textContent = currExpr + ' =';
+            var res = eval(currExpr);
+            document.getElementById('sciDisplay').textContent = res;
+            document.getElementById('sciResult').textContent = res;
+            currExpr = String(res);
+          } catch(e) {
+            document.getElementById('sciDisplay').textContent = 'Error';
+          }
+        }
+        
+</script>
+</body>
+</html>

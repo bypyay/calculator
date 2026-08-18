@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily1Step Calculators — 35+ Free Online Financial, Health &amp; Math Calculators</title>
+<meta name="description" content="Free collection of 35+ accurate calculators for mortgage, loan, BMI, calories, compound interest, scientific math, and everyday utility formulas.">
+<link rel="canonical" href="https://bypyay.github.io/calculator/">
+<link rel="stylesheet" href="assets/css/style.css?v=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Daily1Step Free Online Calculators",
+  "url": "https://bypyay.github.io/calculator/",
+  "description": "Collection of 35+ free online calculators for finance, health, math, and daily utilities.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All modern web browsers"
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-calculator"></i></div>
+      <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="#financial" class="nav-link" onclick="CalcCore.filterCategory('financial', this)">Finance</a>
+      <a href="#health" class="nav-link" onclick="CalcCore.filterCategory('health', this)">Health</a>
+      <a href="#math" class="nav-link" onclick="CalcCore.filterCategory('math', this)">Math</a>
+      <a href="#everyday" class="nav-link" onclick="CalcCore.filterCategory('everyday', this)">Everyday</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-section">
+  <h1 class="hero-title">Free <span class="gradient-text">Online Calculators</span></h1>
+  <p class="hero-subtitle">Fast, comprehensive, and accurate calculators for finance, fitness, health, math, and everyday calculations.</p>
+
+  <div class="tool-search-box">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="searchToolsInput" placeholder="Search any calculator (e.g. Mortgage, BMI, Loan, Compound Interest)...">
+  </div>
+
+  <div class="category-filter-nav">
+    <button class="cat-tab-btn active" onclick="CalcCore.filterCategory('all', this)"><i class="fa-solid fa-grid-2"></i> All (35)</button>
+    <button class="cat-tab-btn" onclick="CalcCore.filterCategory('financial', this)"><i class="fa-solid fa-hand-holding-dollar"></i> Finance</button>
+    <button class="cat-tab-btn" onclick="CalcCore.filterCategory('health', this)"><i class="fa-solid fa-heart-pulse"></i> Fitness &amp; Health</button>
+    <button class="cat-tab-btn" onclick="CalcCore.filterCategory('math', this)"><i class="fa-solid fa-square-root-variable"></i> Math</button>
+    <button class="cat-tab-btn" onclick="CalcCore.filterCategory('everyday', this)"><i class="fa-solid fa-clock"></i> Everyday</button>
+  </div>
+</section>
+
+<main class="tools-container">
+  
+        <div class="category-group-section" data-cat="financial">
+          <div class="category-group-header">
+            <h2 class="cat-group-title"><i class="fa-solid fa-hand-holding-dollar"></i> Financial Calculators (12)</h2>
+          </div>
+          <div class="tool-grid">
+            
+            <a href="tools/mortgage-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-house"></i></div>
+              <div class="tool-card-title">Mortgage Calculator</div>
+              <div class="tool-card-desc">Calculate monthly mortgage payments including principal, interest, taxes, and insurance with interactive amortization breakdown.</div>
+            </a>
+            
+            <a href="tools/loan-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+              <div class="tool-card-title">Loan Calculator</div>
+              <div class="tool-card-desc">Calculate monthly loan EMI payments, total interest payable, and amortization balance schedule for personal or business loans.</div>
+            </a>
+            
+            <a href="tools/auto-loan-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-car"></i></div>
+              <div class="tool-card-title">Auto Loan Calculator</div>
+              <div class="tool-card-desc">Estimate monthly car loan payments including vehicle price, down payment, trade-in value, and sales tax.</div>
+            </a>
+            
+            <a href="tools/compound-interest-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-chart-line-up"></i></div>
+              <div class="tool-card-title">Compound Interest Calculator</div>
+              <div class="tool-card-desc">Calculate the future value of your investments with compounding interest, regular deposits, and annual growth charts.</div>
+            </a>
+            
+            <a href="tools/interest-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-percent"></i></div>
+              <div class="tool-card-title">Simple & Compound Interest Calculator</div>
+              <div class="tool-card-desc">Compare simple vs compound interest over time to see how much your savings or loans accrue.</div>
+            </a>
+            
+            <a href="tools/retirement-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+              <div class="tool-card-title">Retirement Calculator</div>
+              <div class="tool-card-desc">Plan your retirement nest egg, see if you're on track, and calculate how much you need to save each month.</div>
+            </a>
+            
+            <a href="tools/investment-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+              <div class="tool-card-title">Investment ROI Calculator</div>
+              <div class="tool-card-desc">Calculate total returns on investments with initial capital, periodic contributions, and return rates.</div>
+            </a>
+            
+            <a href="tools/salary-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+              <div class="tool-card-title">Salary & Wage Calculator</div>
+              <div class="tool-card-desc">Convert hourly wage to annual salary or annual salary to hourly, weekly, bi-weekly, and monthly rates.</div>
+            </a>
+            
+            <a href="tools/income-tax-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+              <div class="tool-card-title">Income Tax Calculator</div>
+              <div class="tool-card-desc">Estimate your federal and state income tax liabilities, effective tax rate, and take-home net pay.</div>
+            </a>
+            
+            <a href="tools/credit-card-payoff-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-credit-card"></i></div>
+              <div class="tool-card-title">Credit Card Payoff Calculator</div>
+              <div class="tool-card-desc">See how long it takes to pay off credit card debt and how much interest you can save with extra payments.</div>
+            </a>
+            
+            <a href="tools/savings-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+              <div class="tool-card-title">Savings Goal Calculator</div>
+              <div class="tool-card-desc">Calculate how much you need to save every month to reach your financial goal by a specific date.</div>
+            </a>
+            
+            <a href="tools/inflation-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+              <div class="tool-card-title">Inflation & Purchasing Power Calculator</div>
+              <div class="tool-card-desc">Calculate how inflation affects the purchasing power of your money over time and adjust for price changes.</div>
+            </a>
+            
+          </div>
+        </div>
+        
+        <div class="category-group-section" data-cat="health">
+          <div class="category-group-header">
+            <h2 class="cat-group-title"><i class="fa-solid fa-heart-pulse"></i> Fitness & Health Calculators (8)</h2>
+          </div>
+          <div class="tool-grid">
+            
+            <a href="tools/bmi-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-weight-scale"></i></div>
+              <div class="tool-card-title">BMI Calculator</div>
+              <div class="tool-card-desc">Calculate Body Mass Index (BMI) for adults with metric & imperial units and healthy weight category ranges.</div>
+            </a>
+            
+            <a href="tools/calorie-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+              <div class="tool-card-title">Calorie & TDEE Calculator</div>
+              <div class="tool-card-desc">Calculate your Total Daily Energy Expenditure (TDEE) and exact calories needed for weight loss, maintenance, or bulking.</div>
+            </a>
+            
+            <a href="tools/body-fat-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-person"></i></div>
+              <div class="tool-card-title">Body Fat Percentage Calculator</div>
+              <div class="tool-card-desc">Estimate body fat percentage using the US Navy tape measure method (neck, waist, hip, height).</div>
+            </a>
+            
+            <a href="tools/bmr-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+              <div class="tool-card-title">BMR Calculator</div>
+              <div class="tool-card-desc">Calculate Basal Metabolic Rate using Mifflin-St Jeor & Harris-Benedict formulas to find resting calories burned.</div>
+            </a>
+            
+            <a href="tools/macro-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+              <div class="tool-card-title">Macro Calculator (Protein, Carbs, Fats)</div>
+              <div class="tool-card-desc">Calculate daily macronutrient intake grams (protein, carbohydrates, healthy fats) based on fitness goals.</div>
+            </a>
+            
+            <a href="tools/ideal-weight-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+              <div class="tool-card-title">Ideal Body Weight Calculator</div>
+              <div class="tool-card-desc">Compare ideal healthy body weight ranges based on Robinson, Miller, Devine, and Hamwi equations.</div>
+            </a>
+            
+            <a href="tools/pace-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-person-running"></i></div>
+              <div class="tool-card-title">Running Pace & Race Time Calculator</div>
+              <div class="tool-card-desc">Calculate running/cycling pace per km or mile, and predict finish times for 5K, 10K, Half & Full Marathon.</div>
+            </a>
+            
+            <a href="tools/pregnancy-due-date-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-baby"></i></div>
+              <div class="tool-card-title">Pregnancy Due Date Calculator</div>
+              <div class="tool-card-desc">Calculate expected baby delivery due date and trimester timeline based on your Last Menstrual Period (LMP).</div>
+            </a>
+            
+          </div>
+        </div>
+        
+        <div class="category-group-section" data-cat="math">
+          <div class="category-group-header">
+            <h2 class="cat-group-title"><i class="fa-solid fa-square-root-variable"></i> Math & Scientific Calculators (8)</h2>
+          </div>
+          <div class="tool-grid">
+            
+            <a href="tools/scientific-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-calculator"></i></div>
+              <div class="tool-card-title">Scientific Calculator</div>
+              <div class="tool-card-desc">Full-featured online scientific calculator with trigonometric, logarithmic, exponential, and memory functions.</div>
+            </a>
+            
+            <a href="tools/percentage-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-percent"></i></div>
+              <div class="tool-card-title">Percentage Calculator</div>
+              <div class="tool-card-desc">Calculate percent of values, percentage change, increase, decrease, and percentage differences effortlessly.</div>
+            </a>
+            
+            <a href="tools/fraction-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-divide"></i></div>
+              <div class="tool-card-title">Fraction Calculator</div>
+              <div class="tool-card-desc">Add, subtract, multiply, and divide fractions with mixed numbers, step-by-step simplification, and decimal conversion.</div>
+            </a>
+            
+            <a href="tools/volume-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-cube"></i></div>
+              <div class="tool-card-title">Volume & Shape Calculator</div>
+              <div class="tool-card-desc">Calculate the volume and surface area of 3D geometric shapes including sphere, cylinder, cone, cube, and prism.</div>
+            </a>
+            
+            <a href="tools/triangle-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-shapes"></i></div>
+              <div class="tool-card-title">Triangle Solver & Area Calculator</div>
+              <div class="tool-card-desc">Solve any triangle with SSS, SAS, ASA, or AAS methods to calculate side lengths, angles, perimeter, and area.</div>
+            </a>
+            
+            <a href="tools/standard-deviation-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-chart-simple"></i></div>
+              <div class="tool-card-title">Standard Deviation Calculator</div>
+              <div class="tool-card-desc">Calculate sample and population standard deviation, variance, mean, and range for any set of numbers.</div>
+            </a>
+            
+            <a href="tools/quadratic-formula-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-square-root-variable"></i></div>
+              <div class="tool-card-title">Quadratic Formula Solver</div>
+              <div class="tool-card-desc">Solve quadratic equations ax² + bx + c = 0 with real/complex roots, discriminant, vertex, and steps.</div>
+            </a>
+            
+            <a href="tools/random-number-generator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-dice"></i></div>
+              <div class="tool-card-title">Random Number Generator</div>
+              <div class="tool-card-desc">Generate cryptographically secure random integers, decimals, lottery pickers, and roll virtual dice.</div>
+            </a>
+            
+          </div>
+        </div>
+        
+        <div class="category-group-section" data-cat="everyday">
+          <div class="category-group-header">
+            <h2 class="cat-group-title"><i class="fa-solid fa-clock"></i> Everyday & Utility Calculators (7)</h2>
+          </div>
+          <div class="tool-grid">
+            
+            <a href="tools/age-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-cake-candles"></i></div>
+              <div class="tool-card-title">Age Calculator</div>
+              <div class="tool-card-desc">Calculate your exact age in years, months, days, hours, and minutes with upcoming birthday countdown.</div>
+            </a>
+            
+            <a href="tools/date-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-calendar-days"></i></div>
+              <div class="tool-card-title">Date Difference Calculator</div>
+              <div class="tool-card-desc">Calculate total days, weeks, and months between two dates, or add/subtract days from a specific date.</div>
+            </a>
+            
+            <a href="tools/time-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="tool-card-title">Time Card & Hours Calculator</div>
+              <div class="tool-card-desc">Calculate total work hours, lunch break deductions, gross pay, and time interval additions.</div>
+            </a>
+            
+            <a href="tools/gpa-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="tool-card-title">GPA Calculator (College & High School)</div>
+              <div class="tool-card-desc">Calculate weighted and unweighted grade point average (4.0 scale) with letter grade conversion.</div>
+            </a>
+            
+            <a href="tools/tip-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-receipt"></i></div>
+              <div class="tool-card-title">Tip & Bill Split Calculator</div>
+              <div class="tool-card-desc">Quickly calculate restaurant tip percentages and split total bills evenly among any number of people.</div>
+            </a>
+            
+            <a href="tools/discount-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-tags"></i></div>
+              <div class="tool-card-title">Discount & Sale Price Calculator</div>
+              <div class="tool-card-desc">Find the final price after percentage discounts, double coupons, and calculate total savings.</div>
+            </a>
+            
+            <a href="tools/fuel-cost-calculator/index.html" class="tool-card">
+              <div class="tool-card-icon"><i class="fa-solid fa-gas-pump"></i></div>
+              <div class="tool-card-title">Fuel Cost & Gas Trip Calculator</div>
+              <div class="tool-card-desc">Estimate total road trip gas cost, fuel volume required, and cost per passenger.</div>
+            </a>
+            
+          </div>
+        </div>
+        
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="legal/privacy.html">Privacy Policy</a>
+      <a href="legal/terms.html">Terms of Service</a>
+      <a href="legal/about.html">About Us</a>
+      <a href="legal/contact.html">Contact</a>
+      <a href="legal/disclaimer.html">Disclaimer</a>
+    </div>
+    <p class="copyright">&copy; 2026 Daily1Step. Free online calculators for finance, health, math, and daily utilities.</p>
+  </div>
+</footer>
+
+<script src="assets/js/calculator-core.js"></script>
+</body>
+</html>

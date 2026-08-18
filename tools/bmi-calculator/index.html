@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Calculator — Free Online Calculator | Daily1Step</title>
+<meta name="description" content="Calculate Body Mass Index (BMI) for adults with metric & imperial units and healthy weight category ranges.">
+<link rel="canonical" href="https://bypyay.github.io/calculator/tools/bmi-calculator/">
+<link rel="stylesheet" href="../../assets/css/style.css?v=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "BMI Calculator - Daily1Step",
+  "url": "https://bypyay.github.io/calculator/tools/bmi-calculator/",
+  "description": "Calculate Body Mass Index (BMI) for adults with metric & imperial units and healthy weight category ranges.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All modern web browsers",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-calculator"></i></div>
+      <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main class="calc-workspace-wrap">
+  <div class="calc-header-meta">
+    <div class="calc-breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span>/</span>
+      <span>Fitness & Health Calculators</span>
+      <span>/</span>
+      <span>BMI Calculator</span>
+    </div>
+    <h1 class="calc-main-title">BMI Calculator</h1>
+    <p class="calc-main-desc">Calculate Body Mass Index (BMI) for adults with metric & imperial units and healthy weight category ranges.</p>
+  </div>
+
+  <div class="calc-grid-layout">
+    <!-- Left Inputs Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-weight-scale" style="color:var(--primary); margin-right:8px;"></i> Parameters</span>
+      </div>
+      
+        <div class="unit-toggle-group">
+          <button type="button" class="unit-btn active" id="unitMetric" onclick="setUnit('metric')">Metric (cm, kg)</button>
+          <button type="button" class="unit-btn" id="unitUS" onclick="setUnit('us')">US / Imperial (ft, in, lbs)</button>
+        </div>
+        <div class="form-group" id="groupMetricHeight">
+          <label class="form-label">Height (cm)</label>
+          <input type="number" id="heightCm" class="calc-input" value="175" min="50" max="250">
+        </div>
+        <div class="form-group" id="groupUSHeight" style="display:none;">
+          <label class="form-label">Height (Feet &amp; Inches)</label>
+          <div style="display:flex; gap:10px;">
+            <input type="number" id="heightFt" class="calc-input" value="5" min="1" max="8" placeholder="Feet">
+            <input type="number" id="heightIn" class="calc-input" value="9" min="0" max="11" placeholder="Inches">
+          </div>
+        </div>
+        <div class="form-group" id="groupMetricWeight">
+          <label class="form-label">Weight (kg)</label>
+          <input type="number" id="weightKg" class="calc-input" value="70" min="20" max="300">
+        </div>
+        <div class="form-group" id="groupUSWeight" style="display:none;">
+          <label class="form-label">Weight (lbs)</label>
+          <input type="number" id="weightLbs" class="calc-input" value="154" min="40" max="600">
+        </div>
+        
+      <button type="button" class="btn-calc-primary" onclick="calculate()">
+        <i class="fa-solid fa-calculator"></i> Calculate
+      </button>
+    </div>
+
+    <!-- Right Results Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
+      </div>
+      
+        <div class="result-hero-box">
+          <div class="result-hero-label">Your Body Mass Index (BMI)</div>
+          <div class="result-hero-val" id="resBMI">22.9</div>
+          <div style="font-weight:700; color:#0f766e; margin-top:4px;" id="resBMICat">Normal Weight</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Underweight Range</span><span class="val">&lt; 18.5</span></div>
+          <div class="result-row"><span class="label">Normal Weight Range</span><span class="val">18.5 – 24.9</span></div>
+          <div class="result-row"><span class="label">Overweight Range</span><span class="val">25.0 – 29.9</span></div>
+          <div class="result-row"><span class="label">Obese Range</span><span class="val">&ge; 30.0</span></div>
+          <div class="result-row"><span class="label">Healthy Weight for Height</span><span class="val" id="resHealthyWeight">56.7 – 76.3 kg</span></div>
+        </div>
+        
+    </div>
+  </div>
+
+  <!-- Educational Guide & FAQs -->
+  <section class="guide-section">
+    <h2>How BMI Calculator Works</h2>
+    <p>
+      The <strong>BMI Calculator</strong> by Daily1Step provides precise, instant financial, mathematical, and health calculations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
+    </p>
+
+    <h3>Formula &amp; Method</h3>
+    <div class="formula-box">
+      Standardized Formula: Formula variables are evaluated dynamically in client-side high-precision JavaScript.
+    </div>
+
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-card">
+      <div class="faq-q">Is this BMI Calculator completely free to use?</div>
+      <div class="faq-a">Yes! All calculations, interactive charts, and reports are 100% free with no registration, no subscription, and no hidden fees.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Is my financial and personal data secure?</div>
+      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser. Your data is never uploaded, saved, or shared with third parties.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Can I export or print the calculation results?</div>
+      <div class="faq-a">Yes, you can easily save results or print the full summary directly from your browser.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="../../index.html">All Calculators</a>
+      <a href="../../legal/privacy.html">Privacy Policy</a>
+      <a href="../../legal/terms.html">Terms of Service</a>
+      <a href="../../legal/about.html">About Us</a>
+      <a href="../../legal/contact.html">Contact</a>
+      <a href="../../legal/disclaimer.html">Disclaimer</a>
+    </div>
+    <p class="copyright">&copy; 2026 Daily1Step. Free online calculators for finance, health, math, and daily utilities.</p>
+  </div>
+</footer>
+
+<script src="../../vendor/chart.umd.min.js"></script>
+<script src="../../vendor/jspdf.umd.min.js"></script>
+<script src="../../assets/js/calculator-core.js"></script>
+<script>
+
+        var currentUnit = 'metric';
+        function setUnit(u) {
+          currentUnit = u;
+          document.getElementById('unitMetric').classList.toggle('active', u === 'metric');
+          document.getElementById('unitUS').classList.toggle('active', u === 'us');
+          document.getElementById('groupMetricHeight').style.display = u === 'metric' ? 'block' : 'none';
+          document.getElementById('groupMetricWeight').style.display = u === 'metric' ? 'block' : 'none';
+          document.getElementById('groupUSHeight').style.display = u === 'us' ? 'block' : 'none';
+          document.getElementById('groupUSWeight').style.display = u === 'us' ? 'block' : 'none';
+          calculate();
+        }
+        function calculate() {
+          var bmi = 0;
+          var heightM = 0;
+          if (currentUnit === 'metric') {
+            var cm = parseFloat(document.getElementById('heightCm').value) || 175;
+            var kg = parseFloat(document.getElementById('weightKg').value) || 70;
+            heightM = cm / 100;
+            bmi = kg / (heightM * heightM);
+          } else {
+            var ft = parseFloat(document.getElementById('heightFt').value) || 5;
+            var inch = parseFloat(document.getElementById('heightIn').value) || 9;
+            var lbs = parseFloat(document.getElementById('weightLbs').value) || 154;
+            var totalIn = ft * 12 + inch;
+            heightM = totalIn * 0.0254;
+            bmi = 703 * lbs / (totalIn * totalIn);
+          }
+
+          var cat = 'Normal Weight';
+          if (bmi < 18.5) cat = 'Underweight';
+          else if (bmi < 25) cat = 'Normal Weight';
+          else if (bmi < 30) cat = 'Overweight';
+          else cat = 'Obese';
+
+          document.getElementById('resBMI').textContent = bmi.toFixed(1);
+          document.getElementById('resBMICat').textContent = cat;
+
+          var minH = 18.5 * (heightM * heightM);
+          var maxH = 24.9 * (heightM * heightM);
+          if (currentUnit === 'metric') {
+            document.getElementById('resHealthyWeight').textContent = minH.toFixed(1) + ' – ' + maxH.toFixed(1) + ' kg';
+          } else {
+            document.getElementById('resHealthyWeight').textContent = (minH * 2.20462).toFixed(1) + ' – ' + (maxH * 2.20462).toFixed(1) + ' lbs';
+          }
+        }
+        document.querySelectorAll('.calc-input').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
+</script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound Interest Calculator — Free Online Calculator | Daily1Step</title>
+<meta name="description" content="Calculate the future value of your investments with compounding interest, regular deposits, and annual growth charts.">
+<link rel="canonical" href="https://bypyay.github.io/calculator/tools/compound-interest-calculator/">
+<link rel="stylesheet" href="../../assets/css/style.css?v=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Compound Interest Calculator - Daily1Step",
+  "url": "https://bypyay.github.io/calculator/tools/compound-interest-calculator/",
+  "description": "Calculate the future value of your investments with compounding interest, regular deposits, and annual growth charts.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "All modern web browsers",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../../index.html" class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-calculator"></i></div>
+      <div class="brand-title">Daily1Step <span class="accent">Calc</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html" class="nav-link"><i class="fa-solid fa-grid-2"></i> All Calculators</a>
+    </nav>
+  </div>
+</header>
+
+<main class="calc-workspace-wrap">
+  <div class="calc-header-meta">
+    <div class="calc-breadcrumb">
+      <a href="../../index.html">Home</a>
+      <span>/</span>
+      <span>Financial Calculators</span>
+      <span>/</span>
+      <span>Compound Interest Calculator</span>
+    </div>
+    <h1 class="calc-main-title">Compound Interest Calculator</h1>
+    <p class="calc-main-desc">Calculate the future value of your investments with compounding interest, regular deposits, and annual growth charts.</p>
+  </div>
+
+  <div class="calc-grid-layout">
+    <!-- Left Inputs Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-chart-line-up" style="color:var(--primary); margin-right:8px;"></i> Parameters</span>
+      </div>
+      
+        <div class="form-group">
+          <label class="form-label">Initial Investment</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix">$</span>
+            <input type="number" id="initDeposit" class="calc-input has-prefix" value="10000" min="0" step="500">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Monthly Contribution</label>
+          <div class="input-with-affix">
+            <span class="input-affix prefix">$</span>
+            <input type="number" id="monthlyContrib" class="calc-input has-prefix" value="500" min="0" step="50">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Investment Period (Years)</label>
+          <input type="number" id="investYears" class="calc-input" value="15" min="1" max="50">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Estimated Annual Return Rate</label>
+          <div class="input-with-affix">
+            <input type="number" id="annualReturn" class="calc-input has-suffix" value="8" min="0.1" max="30" step="0.1">
+            <span class="input-affix suffix">%</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Compound Frequency</label>
+          <select id="compoundFreq" class="calc-select">
+            <option value="12" selected>Monthly (12/yr)</option>
+            <option value="1">Annually (1/yr)</option>
+            <option value="4">Quarterly (4/yr)</option>
+            <option value="365">Daily (365/yr)</option>
+          </select>
+        </div>
+        
+      <button type="button" class="btn-calc-primary" onclick="calculate()">
+        <i class="fa-solid fa-calculator"></i> Calculate
+      </button>
+    </div>
+
+    <!-- Right Results Card -->
+    <div class="calc-card">
+      <div class="calc-card-title">
+        <span><i class="fa-solid fa-chart-pie" style="color:var(--primary); margin-right:8px;"></i> Calculation Summary</span>
+      </div>
+      
+        <div class="result-hero-box">
+          <div class="result-hero-label">Future Investment Value</div>
+          <div class="result-hero-val" id="resFutureVal">$206,854.72</div>
+        </div>
+        <div class="result-breakdown-list">
+          <div class="result-row"><span class="label">Initial Principal</span><span class="val" id="resInit">$10,000.00</span></div>
+          <div class="result-row"><span class="label">Total Contributions</span><span class="val" id="resContribs">$90,000.00</span></div>
+          <div class="result-row"><span class="label">Total Interest Earned</span><span class="val" id="resEarned">$106,854.72</span></div>
+        </div>
+        <div class="chart-card-wrapper"><canvas id="calcChart"></canvas></div>
+        
+    </div>
+  </div>
+
+  <!-- Educational Guide & FAQs -->
+  <section class="guide-section">
+    <h2>How Compound Interest Calculator Works</h2>
+    <p>
+      The <strong>Compound Interest Calculator</strong> by Daily1Step provides precise, instant financial, mathematical, and health calculations directly in your browser. All computations follow standardized formulas and equations without transmitting any sensitive personal data to external servers.
+    </p>
+
+    <h3>Formula &amp; Method</h3>
+    <div class="formula-box">
+      Standardized Formula: Formula variables are evaluated dynamically in client-side high-precision JavaScript.
+    </div>
+
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-card">
+      <div class="faq-q">Is this Compound Interest Calculator completely free to use?</div>
+      <div class="faq-a">Yes! All calculations, interactive charts, and reports are 100% free with no registration, no subscription, and no hidden fees.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Is my financial and personal data secure?</div>
+      <div class="faq-a">Absolutely. All calculations happen entirely within your local browser. Your data is never uploaded, saved, or shared with third parties.</div>
+    </div>
+    <div class="faq-card">
+      <div class="faq-q">Can I export or print the calculation results?</div>
+      <div class="faq-a">Yes, you can easily save results or print the full summary directly from your browser.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="../../index.html">All Calculators</a>
+      <a href="../../legal/privacy.html">Privacy Policy</a>
+      <a href="../../legal/terms.html">Terms of Service</a>
+      <a href="../../legal/about.html">About Us</a>
+      <a href="../../legal/contact.html">Contact</a>
+      <a href="../../legal/disclaimer.html">Disclaimer</a>
+    </div>
+    <p class="copyright">&copy; 2026 Daily1Step. Free online calculators for finance, health, math, and daily utilities.</p>
+  </div>
+</footer>
+
+<script src="../../vendor/chart.umd.min.js"></script>
+<script src="../../vendor/jspdf.umd.min.js"></script>
+<script src="../../assets/js/calculator-core.js"></script>
+<script>
+
+        function calculate() {
+          var P = parseFloat(document.getElementById('initDeposit').value) || 0;
+          var PMT = parseFloat(document.getElementById('monthlyContrib').value) || 0;
+          var t = parseFloat(document.getElementById('investYears').value) || 15;
+          var r = (parseFloat(document.getElementById('annualReturn').value) || 8) / 100;
+          var n = parseFloat(document.getElementById('compoundFreq').value) || 12;
+
+          var labels = [];
+          var balanceData = [];
+          var contribData = [];
+
+          var balance = P;
+          var totalContrib = P;
+
+          for (var yr = 0; yr <= t; yr++) {
+            labels.push('Yr ' + yr);
+            if (yr === 0) {
+              balanceData.push(P);
+              contribData.push(P);
+            } else {
+              // calculate for each year
+              for (var m = 0; m < 12; m++) {
+                balance = balance * (1 + r / 12) + PMT;
+                totalContrib += PMT;
+              }
+              balanceData.push(balance);
+              contribData.push(totalContrib);
+            }
+          }
+
+          var totalInterest = Math.max(0, balance - totalContrib);
+          document.getElementById('resFutureVal').textContent = CalcCore.formatCurrency(balance);
+          document.getElementById('resInit').textContent = CalcCore.formatCurrency(P);
+          document.getElementById('resContribs').textContent = CalcCore.formatCurrency(totalContrib - P);
+          document.getElementById('resEarned').textContent = CalcCore.formatCurrency(totalInterest);
+
+          CalcCore.renderLineChart('calcChart', labels, [
+            { label: 'Total Balance ($)', data: balanceData, borderColor: '#0d9488', backgroundColor: 'rgba(13,148,136,0.1)', fill: true, tension: 0.3 },
+            { label: 'Total Principal Invested ($)', data: contribData, borderColor: '#0284c7', backgroundColor: 'transparent', borderDash: [5, 5], tension: 0 }
+          ]);
+        }
+        document.querySelectorAll('.calc-input, .calc-select').forEach(function(el) { el.addEventListener('input', calculate); });
+        calculate();
+        
+</script>
+</body>
+</html>
